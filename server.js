@@ -2,7 +2,7 @@
 const express = require('express');
 const PORT = 3002;
 
-const indexRouter = require('.routes/index');
+const indexRouter = require('./routes/index');
 const morgan = require('morgan');
 
 
