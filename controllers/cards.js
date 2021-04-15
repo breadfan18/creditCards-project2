@@ -5,5 +5,5 @@ module.exports = {
 }
 
 function index(req, res) {
-    res.render('index');
+    res.render('cards/index');
 }

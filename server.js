@@ -1,9 +1,10 @@
 // Import required 
 const express = require('express');
+const morgan = require('morgan');
 const PORT = 3002;
 
 const indexRouter = require('./routes/index');
-const morgan = require('morgan');
+const cardsRouter = require('./routes/cards');
 
 
 // initialize the express app
@@ -22,6 +23,7 @@ app.use(express.static('public'));
 
 // Mount the routers 
 app.use('/', indexRouter);
+app.use('/cards', cardsRouter);
 
 
 // Tell the app to listen
