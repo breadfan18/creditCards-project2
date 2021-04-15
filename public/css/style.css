@@ -1,0 +1,14 @@
+
+
+
+#carousel {
+    min-height: 20vh;
+
+    background-color: gray;
+}
+
+#headerImg{
+    width:100%;
+    height:80%;
+    object-fit: stretch;
+}
