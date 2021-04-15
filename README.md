@@ -40,6 +40,6 @@ These were the wireframes I created before starting to write any code for this p
 - The Cards collection with have an embedded relationship with the Benefits schema
 - The Cards collection with have a Referenced Relationship with the Users model
 
-![erd](https://i.imgur.com/OT9TRL9.png)
+![erd](https://i.imgur.com/GR1ENea.png)
 
 
