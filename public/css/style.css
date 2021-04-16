@@ -4,6 +4,7 @@
 #carousel {
     min-height: 20vh;
     border: 10px solid white;
+    border-bottom: none;
     background-color: gray;
 }
 

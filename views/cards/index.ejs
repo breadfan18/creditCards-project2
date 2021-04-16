@@ -44,8 +44,11 @@
                     <td><%= card.cardName %> </td>
 
                     <td>
+                        <% let bureauIndex = 0 %> 
                         <% card.creditPull.forEach(pull => { %>
-                            <div><%= pull === null ? '' : 'Test' %> </div>
+                            <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%> 
+                            <div><%= pull === null ? '' : creditBureaus[bureauIndex]; %> </div>
+                            <% bureauIndex++ %> 
                         <% }) %> 
                     </td>
                    
