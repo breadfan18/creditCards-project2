@@ -7,7 +7,6 @@ module.exports = {
 }
 
 function index(req, res) {
-    console.log(citySate.stateCityList)
     Card.find({}, function(err, cards){
         res.render('cards/index', {
             title: 'All Cards',
