@@ -9,4 +9,4 @@ const userSchema = new Schema({
     state: String    
 })
 
-module.exports = mongoose.model('User', usersSchema);
+module.exports = mongoose.model('User', userSchema);

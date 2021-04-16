@@ -5,7 +5,7 @@ const PORT = 3002;
 
 const indexRouter = require('./routes/index');
 const cardsRouter = require('./routes/cards');
-// const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
 
 
 // initialize the express app
@@ -25,6 +25,8 @@ app.use(express.static('public'));
 // Mount the routers 
 app.use('/', indexRouter);
 app.use('/cards', cardsRouter);
+app.use('/users', usersRouter);
+
 
 
 // Tell the app to listen
