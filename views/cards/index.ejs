@@ -35,24 +35,37 @@
                     </select>
                 </td>
             </tr>
-            <tr class="bg-warning">
-                <th scope="row">1</th>
-                <td>04/22/2022</td>
-                <td>Chase</td>
-                <td>Sapphire Reserve</td>
-                <td>Experian Equifax</td>
-                <td>$95</td>
-                <td>04/22/2022</td>
-                <td>$22,000</td>
-                <td>
-                    <select name="" id="">
-                        <option value="">Table</option>
-                        <option value="">Chair</option>
-                        <option value="">Couch</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
+
+            <% cards.forEach((card, idx) => { %> 
+                <tr>
+                    <th scope="row"><%= idx+1 %> </th>
+                    <td><%= card.appDate.toLocaleDateString() %> </td>
+                    <td><%= card.issuer %> </td>
+                    <td><%= card.cardName %> </td>
+
+                    <td>
+                        <% card.creditPull.forEach(pull => { %>
+                            <div><%= pull === null ? '' : 'Test' %> </div>
+                        <% }) %> 
+                    </td>
+                   
+                    
+                    <td>$<%= card.annualFee %> </td>
+                    <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
+                    <td>$<%= card.creditLine %> </td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">Table</option>
+                            <option value="">Chair</option>
+                            <option value="">Couch</option>
+                        </select>
+                    </td>
+                </tr>
+
+             <% }) %>    
+
+            
+            <!-- <tr>
                 <th scope="row">1</th>
                 <td>04/22/2022</td>
                 <td>Chase</td>
@@ -102,7 +115,7 @@
                         <option value="">Couch</option>
                     </select>
                 </td>
-            </tr>
+            </tr> -->
 
         </tbody>
     </table>

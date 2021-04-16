@@ -7,7 +7,12 @@ module.exports = {
 }
 
 function index(req, res) {
-    res.render('cards/index');
+    Card.find({}, function(err, cards){
+        res.render('cards/index', {
+            title: 'All Cards',
+            cards
+        })
+    })
 }
 
 function newCard(req, res) {
