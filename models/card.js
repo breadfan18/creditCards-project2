@@ -36,11 +36,14 @@ const cardsSchema = new Schema({
         }
     },
     creditLine: String,
+    bonusSpend: String,
+    bonusSpendDate: Date,
+    annualFee: String,
+    benefits: [benefitsSchema],
     accountStatus: {
         type: String,
         enum: ['Active', 'Closed', 'Downgraded']
     },
-    benefits: [benefitsSchema],
     notes: String
 })
 

@@ -3,7 +3,7 @@
 <form action="/cards" method="POST">
     <div class="form-group">
         <label for="cardHolder">Card Holder</label>
-        <select class="form-control" id="cardHolder">
+        <select class="form-control" id="cardHolder" name="applicant">
             <option value="" disabled selected>Choose Cardholder</option>
             <option>Wayne Rooney</option>
             <option>Anshu Thapa</option>
@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
         <label for="issuer">Card Issuer</label>
-        <select class="form-control" id="issuer">
+        <select class="form-control" id="issuer" name="issuer">
             <option value="" disabled selected>Choose Issuer</option>
             <option>Chase</option>
             <option>American Express</option>
@@ -23,30 +23,30 @@
     </div>
     <div class="form-group">
         <label for="cardName">Card Name</label>
-        <input type="email" class="form-control" id="cardName">
+        <input type="text" class="form-control" id="cardName" name="cardName">
     </div>
     <div class="form-group">
         <label for="appDate">App Date</label>
-        <input type="date" class="form-control" id="appDate">
+        <input type="date" class="form-control" id="appDate" name="appDate">
     </div>
 
 
     <div id="creditPull">
-        <label for="creditPULL">Credit Pull</label>
+        <label for="creditPull">Credit Pull</label>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="experian">
+            <input class="form-check-input" type="checkbox" value="" id="experian" name="experian">
             <label class="form-check-label" for="experian">
                 Experian
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="equifax">
+            <input class="form-check-input" type="checkbox" value="" id="equifax" name="equifax">
             <label class="form-check-label" for="equifax">
                 Equifax
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="transunion">
+            <input class="form-check-input" type="checkbox" value="" id="transunion" name="transunion">
             <label class="form-check-label" for="transunion">
                 Transunion
             </label>
@@ -56,23 +56,23 @@
 
     <div class="form-group">
         <label for="nextFeeDate">Next Fee Date</label>
-        <input type="date" class="form-control" id="nextFeeDate">
+        <input type="date" class="form-control" id="nextFeeDate" name="nextFeeDate">
     </div>
     <div class="form-group">
         <label for="creditLine">Credit Line</label>
-        <input type="email" class="form-control" id="creditLine">
+        <input type="text" class="form-control" id="creditLine" name="creditLine">
     </div>
     <div class="form-group">
         <label for="bonusSpend">Bonus Spend</label>
-        <input type="email" class="form-control" id="bonusSpend">
+        <input type="text" class="form-control" id="bonusSpend" name="bonusSpend">
     </div>
     <div class="form-group">
         <label for="bonusSpendDate">Bonus Spend Date</label>
-        <input type="date" class="form-control" id="bonusSpendDate">
+        <input type="date" class="form-control" id="bonusSpendDate" name="bonusSpendDate">
     </div>
     <div class="form-group">
         <label for="annualFee">Annual Fee</label>
-        <input type="email" class="form-control" id="annualFee">
+        <input type="text" class="form-control" id="annualFee" name="annualFee">
     </div>
 
 
@@ -85,7 +85,7 @@
 
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Add Card</button>
 </form>
 
 <%- include('../partials/footer') %>

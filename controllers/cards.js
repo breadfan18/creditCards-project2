@@ -1,8 +1,9 @@
-const Cards = require('../models/card');
+const Card = require('../models/card');
 
 module.exports = {
     index,
-    new: newCard
+    new: newCard,
+    create
 }
 
 function index(req, res) {
@@ -11,4 +12,8 @@ function index(req, res) {
 
 function newCard(req, res) {
     res.render('cards/new');
+}
+
+function create(req, res) {
+    console.log(req.body);
 }
