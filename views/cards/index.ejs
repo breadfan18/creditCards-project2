@@ -18,108 +18,31 @@
             </tr>
         </thead>
         <tbody>
+            <% cards.forEach((card, idx) => { %>
             <tr>
-                <th scope="row">1</th>
-                <td>04/22/2022</td>
-                <td>Chase</td>
-                <td>Sapphire Reserve</td>
-                <td>Experian Equifax</td>
-                <td>$95</td>
-                <td>04/22/2022</td>
-                <td>$22,000</td>
+                <th scope="row"><%= idx+1 %> </th>
+                <td><%= card.appDate.toLocaleDateString() %> </td>
+                <td><%= card.issuer %> </td>
+                <td><%= card.cardName %> </td>
+                <td>
+                    <% card.creditPull.forEach((pull, idx) => { %>
+                    <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
+                    <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
+                    <% }) %>
+                </td>
+                <td>$<%= card.annualFee %> </td>
+                <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
+                <td>$<%= card.creditLine %> </td>
                 <td>
                     <select name="" id="">
-                        <option value="">Table</option>
-                        <option value="">Chair</option>
-                        <option value="">Couch</option>
+                        <option value="">Active</option>
+                        <option value="">Closed</option>
+                        <option value="">Downgraded</option>
                     </select>
                 </td>
             </tr>
 
-            <% cards.forEach((card, idx) => { %> 
-                <tr>
-                    <th scope="row"><%= idx+1 %> </th>
-                    <td><%= card.appDate.toLocaleDateString() %> </td>
-                    <td><%= card.issuer %> </td>
-                    <td><%= card.cardName %> </td>
-
-                    <td>
-                        <% let bureauIndex = 0 %> 
-                        <% card.creditPull.forEach(pull => { %>
-                            <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%> 
-                            <div><%= pull === null ? '' : creditBureaus[bureauIndex]; %> </div>
-                            <% bureauIndex++ %> 
-                        <% }) %> 
-                    </td>
-                   
-                    
-                    <td>$<%= card.annualFee %> </td>
-                    <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
-                    <td>$<%= card.creditLine %> </td>
-                    <td>
-                        <select name="" id="">
-                            <option value="">Table</option>
-                            <option value="">Chair</option>
-                            <option value="">Couch</option>
-                        </select>
-                    </td>
-                </tr>
-
-             <% }) %>    
-
-            
-            <!-- <tr>
-                <th scope="row">1</th>
-                <td>04/22/2022</td>
-                <td>Chase</td>
-                <td>Sapphire Reserve</td>
-                <td>Experian Equifax</td>
-                <td>$95</td>
-                <td>04/22/2022</td>
-                <td>$22,000</td>
-                <td>
-                    <select name="" id="">
-                        <option value="">Table</option>
-                        <option value="">Chair</option>
-                        <option value="">Couch</option>
-                    </select>
-                </td>
-            </tr>
-            <tr class="bg-danger">
-                <th scope="row">1</th>
-                <td>04/22/2022</td>
-                <td>Chase</td>
-                <td>Sapphire Reserve</td>
-                <td>Experian Equifax</td>
-                <td>$95</td>
-                <td>04/22/2022</td>
-                <td>$22,000</td>
-                <td>
-                    <select name="" id="">
-                        <option value="">Table</option>
-                        <option value="">Chair</option>
-                        <option value="">Couch</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">1</th>
-                <td>04/22/2022</td>
-                <td>Chase</td>
-                <td>Sapphire Reserve</td>
-                <td>Experian Equifax</td>
-                <td>$95</td>
-                <td>04/22/2022</td>
-                <td>$22,000</td>
-                <td>
-                    <select name="" id="">
-                        <option value="">Table</option>
-                        <option value="">Chair</option>
-                        <option value="">Couch</option>
-                    </select>
-                </td>
-            </tr> -->
-
+            <% }) %>
         </tbody>
     </table>
 </div>
