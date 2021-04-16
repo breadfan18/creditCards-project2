@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Users</h1>
-</body>
-</html>
+<%- include('../partials/header') %>
+
+<h1>ADD USER</h1>
+<form action="/cards" method="POST">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" name="firstName">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" name="lastName">
+    </div>
+    <div class="form-group">
+        <label for="state">State</label>
+        <select class="form-control" id="state" name="state">
+            <option value="" disabled selected>Choose State</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <select class="form-control" id="city" name="city">
+            <option value="" disabled selected>Choose City</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="dob">Birth Date</label>
+        <input type="date" class="form-control" id="dob" name="dob">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Card</button>
+</form>
+
+<%- include('../partials/footer') %>
