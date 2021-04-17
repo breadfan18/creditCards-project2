@@ -22,6 +22,7 @@ const stateCityList = {
       "Valley Stream"
     ],
     "California": [
+      "Castro Valley",
       "Los Angeles",
       "San Diego",
       "San Jose",

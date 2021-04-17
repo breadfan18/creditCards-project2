@@ -7,7 +7,12 @@ module.exports = {
 }
 
 function addNewUser(req, res) {
-    res.render('users/new');
+    // res.render('users/new');
+    User.find({}, function(err, users){
+        res.render('users/new', {
+            users
+        });
+    })
 }
 
 function create(req, res) {

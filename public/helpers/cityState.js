@@ -1,3 +1,7 @@
+module.exports = {
+    stateCityList
+}
+
 const stateCityList = {
     "New York": [
       "New York",
@@ -19,6 +23,7 @@ const stateCityList = {
       "Valley Stream"
     ],
     "California": [
+      "Castro Valley",
       "Los Angeles",
       "San Diego",
       "San Jose",
@@ -388,6 +393,7 @@ const stateCityList = {
       "Wilkes-Barre"
     ],
     "Arizona": [
+      "Phoenix",
       "Phoenix",
       "Tucson",
       "Mesa",
