@@ -1,7 +1,3 @@
-module.exports = {
-    stateCityList
-}
-
 const stateCityList = {
     "New York": [
       "New York",
@@ -1107,3 +1103,7 @@ const stateCityList = {
     ]
   };
 
+
+function getCityStates() {
+    return stateCityList;
+}
