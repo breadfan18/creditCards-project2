@@ -1,0 +1,4 @@
+Challenges: 
+- Could not find user _id since it was not part of req.params
+
+

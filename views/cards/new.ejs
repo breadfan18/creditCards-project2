@@ -6,7 +6,7 @@
         <select class="form-control" id="cardHolder" name="applicant">
             <option value="" disabled selected>Choose Cardholder</option>
             <% users.forEach(user => { %>
-                <option value="<%= user.firstName %><%= user.lastName %>"><%= user.firstName %> <%= user.lastName %></option>
+                <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %></option>
             <% }); %> 
         </select>
     </div>
