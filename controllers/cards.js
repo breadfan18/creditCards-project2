@@ -1,4 +1,6 @@
 const Card = require('../models/card');
+const User = require('../models/user');
+
 
 module.exports = {
     index,
@@ -20,11 +22,9 @@ function newCard(req, res) {
 }
 
 function create(req, res) {
-    // console.log(req.body);
-
     let creditPullArr = [req.body.experian, req.body.equifax, req.body.transunion];
 
-    let cardObj = {
+    let newCardObj = {
         applicant: req.body.applicant,
         issuer: req.body.issuer,
         cardName: req.body.cardName,
@@ -37,7 +37,7 @@ function create(req, res) {
         annualFee: req.body.annualFee
     }
 
-    Card.create(cardObj, function(err, card){
+    Card.create(newCardObj, function(err, card){
         console.log(err)
         if(err) return res.redirect('/cards/new');
         res.redirect('/cards');
