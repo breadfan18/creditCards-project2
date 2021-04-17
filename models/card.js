@@ -14,12 +14,11 @@ const benefitsSchema = new Schema({
 })
 
 const cardsSchema = new Schema({
-    // applicant: {
-    //     //this doesn't exist yet
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'User'
-    // },
-    applicant: String,
+    applicant: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    },
+    // applicant: String,
     appDate: {
         type: Date,
         default: function () {

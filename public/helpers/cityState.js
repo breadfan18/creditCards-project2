@@ -1,7 +1,3 @@
-module.exports = {
-    stateCityList
-}
-
 const stateCityList = {
     "New York": [
       "New York",

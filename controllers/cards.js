@@ -18,18 +18,21 @@ function index(req, res) {
 }
 
 function newCard(req, res) {
-    res.render('cards/new');
+    User.find({}, function (err, users) {
+        res.render('cards/new', {
+            users
+        });
+    })
 }
 
 function create(req, res) {
-    let creditPullArr = [req.body.experian, req.body.equifax, req.body.transunion];
 
     let newCardObj = {
         applicant: req.body.applicant,
         issuer: req.body.issuer,
         cardName: req.body.cardName,
         appDate: req.body.appDate,
-        creditPull: creditPullArr,
+        creditPull: [req.body.experian, req.body.equifax, req.body.transunion],
         nextFeeDate: req.body.nextFeeDate,
         creditLine: req.body.creditLine,
         bonusSpend: req.body.bonusSpend,
