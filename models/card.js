@@ -44,7 +44,9 @@ const cardsSchema = new Schema({
         type: String,
         enum: ['Active', 'Closed', 'Downgraded']
     },
-    notes: String
+    notes: String,
+}, {
+    timestamps: true
 })
 
 module.exports = mongoose.model('Card', cardsSchema);

@@ -1105,7 +1105,6 @@ const stateCityList = {
     ]
   };
 
-
 function getCityStates() {
     return stateCityList;
 }
