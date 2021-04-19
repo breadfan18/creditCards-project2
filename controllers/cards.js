@@ -1,7 +1,6 @@
 const Card = require('../models/card');
 const User = require('../models/user');
 
-
 module.exports = {
     index,
     new: newCard,
@@ -10,9 +9,12 @@ module.exports = {
 
 function index(req, res) {
     Card.find({}, function (err, cards) {
-        res.render('cards/index', {
-            title: 'All Cards',
-            cards
+        User.find({}, function (err, users) {
+            res.render('cards/index', {
+                title: 'All Cards',
+                cards, 
+                users
+            })
         })
     })
 }
@@ -31,8 +33,6 @@ function create(req, res) {
         firstName: nameSplitArr[0],
         lastName: nameSplitArr[1]
     }, function (err, user) {
-        console.log(user._id);
-
         let newCardObj = {
             applicant: user._id,
             issuer: req.body.issuer,
@@ -47,7 +47,6 @@ function create(req, res) {
         }
     
         Card.create(newCardObj, function(err, card){
-            console.log(err)
             if(err) return res.redirect('/cards/new');
             res.redirect('/cards');
         })
