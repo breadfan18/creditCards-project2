@@ -20,21 +20,8 @@
         </thead>
         <tbody>
             <% cards.forEach((card, idx) => { 
-                let fullName = '';
-
-                console.log('card.applicant: ', card.applicant);
-
-                users.forEach(user => {
-                    console.log('user._id: ', user._id);
-                    console.log(user._id === card.applicant);
-                    // if(user._id == card.applicant) {
-                    //     currentUser = user;
-                    //     fullName = `${currentUser.firstName} ${currentUser.lastName}`
-                    // }
-                    // else {console.log('no match')}
-                });
-                
-                // let fullName = `${currentUser.firstName} ${currentUser.lastName}`
+                let currentCardHolder = users.find(user => user._id.equals(card.applicant));
+                let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`
                 %>
             <tr>
                 <th scope="row"><%= idx+1 %> </th>
@@ -59,7 +46,6 @@
                     </select>
                 </td>
             </tr>
-
             <% }) %>
         </tbody>
     </table>
