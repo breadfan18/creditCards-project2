@@ -6,9 +6,8 @@
         <thead>
             <tr>
                 <th scope="col">Card Holder</th>
+                <th scope="col">Card</th>
                 <th scope="col">App Date</th>
-                <th scope="col">Issuer</th>
-                <th scope="col">Card Name</th>
                 <th scope="col">Credit Pull</th>
                 <th scope="col">Annual Fee</th>
                 <th scope="col">Next Fee Date</th>
@@ -22,9 +21,8 @@
             <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
             <tr>
                 <td><%=  fullName %></td>
+                <td><%= card.issuer %> <%= card.cardName %> </td>
                 <td><%= card.appDate.toLocaleDateString() %> </td>
-                <td><%= card.issuer %> </td>
-                <td><%= card.cardName %> </td>
                 <td>
                     <% card.creditPull.forEach((pull, idx) => { %>
                     <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
