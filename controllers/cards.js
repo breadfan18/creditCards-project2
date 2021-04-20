@@ -56,6 +56,13 @@ function create(req, res) {
 }
 
 function show(req, res) {
-    res.render('cards/show');
+    Card.findById(req.params.id, function (err, card) {
+        User.find({}, function (err, users) {
+            res.render('cards/show', {
+                card,
+                users
+            })
+        })
+    })
     
 }

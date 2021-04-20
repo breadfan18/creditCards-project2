@@ -18,3 +18,7 @@ body{
 .navbar{
     background-color: rgb(204, 200, 240);
 } 
+
+.cardDisplayFields > div:first-child{
+    font-weight: bold;
+}
