@@ -6,6 +6,7 @@ const router = express.Router();
 router.get('/', cardsCtrl.index);
 router.get('/new', cardsCtrl.new);
 router.post('/', cardsCtrl.create);
+router.get('/:id', cardsCtrl.show);
 
 
 

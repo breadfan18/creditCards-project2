@@ -4,7 +4,8 @@ const User = require('../models/user');
 module.exports = {
     index,
     new: newCard,
-    create
+    create,
+    show
 }
 
 function index(req, res) {
@@ -52,4 +53,9 @@ function create(req, res) {
         })
     })
 
+}
+
+function show(req, res) {
+    res.render('cards/show');
+    
 }

@@ -18,11 +18,3 @@ body{
 .navbar{
     background-color: rgb(204, 200, 240);
 } 
-
-.nav-link{
-    height: 100%;
-}
-
-.nav-link:focus{
-    border-bottom: 3px solid gray;
-}
