@@ -1,7 +1,6 @@
 const statesAndCities = getCityStates();
 
 let allStates = Object.keys(statesAndCities).sort();
-console.log(allStates);
 $('#states').append('<option></option>');
 allStates.forEach(element => {
     let $newStateRow = $(`
@@ -25,6 +24,7 @@ function initializeCities() {
 }
 
 $('#states').on('change', initializeCities);
-$('.navbar-nav').on('click', '.nav-link', function (e) {
-    console.log(e.target);
-})
+
+$(document).ready(function() {
+    $('#example').DataTable();
+  });
