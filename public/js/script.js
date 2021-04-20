@@ -1,5 +1,10 @@
+
+// Initialize city and state functionality in the add user page
+
+// First call the function for cityState.js in the helpers folder that returns the city/stage object
 const statesAndCities = getCityStates();
 
+// Get all the states, which are keys, and store them in allStates array. Then append each statename into the select drop down for states.
 let allStates = Object.keys(statesAndCities).sort();
 $('#states').append('<option></option>');
 allStates.forEach(element => {
@@ -9,7 +14,7 @@ allStates.forEach(element => {
     $('#states').append($newStateRow);
 });
 
-
+// Populate cities when a certain state is selected. 
 function initializeCities() {
     selectedState = $('#states option:selected').val();
     cities = statesAndCities[selectedState].sort();
@@ -25,6 +30,7 @@ function initializeCities() {
 
 $('#states').on('change', initializeCities);
 
+// Initilize DataTables CDN 
 $(document).ready( function () {
-    $('#cardsTable').DataTable();
+    $('.table').DataTable();
 } );
