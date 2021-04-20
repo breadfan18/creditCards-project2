@@ -25,6 +25,6 @@ function initializeCities() {
 
 $('#states').on('change', initializeCities);
 
-$(document).ready(function() {
-    $('#example').DataTable();
-  });
+$(document).ready( function () {
+    $('#cardsTable').DataTable();
+} );
