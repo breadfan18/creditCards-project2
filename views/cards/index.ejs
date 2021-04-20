@@ -19,27 +19,28 @@
             <% cards.forEach((card, idx) => { %>
             <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
             <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
-            <tr>
-                <td><%=  fullName %></td>
-                <td><%= card.issuer %> <%= card.cardName %> </td>
-                <td><%= card.appDate.toLocaleDateString() %> </td>
-                <td>
-                    <% card.creditPull.forEach((pull, idx) => { %>
-                    <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
-                    <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
-                    <% }) %>
-                </td>
-                <td>$<%= card.annualFee %> </td>
-                <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
-                <td>$<%= card.creditLine %> </td>
-                <td>
-                    <select name="" id="">
-                        <option value="">Active</option>
-                        <option value="">Closed</option>
-                        <option value="">Downgraded</option>
-                    </select>
-                </td>
-            </tr>
+
+                <tr data-href="/cards/<%= card._id %> ">
+                    <td><%= fullName %></td>
+                    <td><%= card.issuer %> <%= card.cardName %> </td>
+                    <td><%= card.appDate.toLocaleDateString() %> </td>
+                    <td>
+                        <% card.creditPull.forEach((pull, idx) => { %>
+                        <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
+                        <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
+                        <% }) %>
+                    </td>
+                    <td>$<%= card.annualFee %> </td>
+                    <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
+                    <td>$<%= card.creditLine %> </td>
+                    <td>
+                        <select name="" id="">
+                            <option value="">Active</option>
+                            <option value="">Closed</option>
+                            <option value="">Downgraded</option>
+                        </select>
+                    </td>
+                </tr>
             <% }); %>
         </tbody>
     </table>

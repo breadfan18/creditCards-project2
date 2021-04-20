@@ -34,3 +34,28 @@ $('#states').on('change', initializeCities);
 $(document).ready( function () {
     $('.table').DataTable();
 } );
+
+
+// Script to make the table rows clickable 
+$(document).on('DOMContentLoaded', () => {
+    const rows = document.querySelectorAll('tr[data-href]');
+    console.log(rows);
+
+    rows.forEach(row => {
+        $(row).on('click', () => {
+            window.location.href = row.dataset.href;
+        })
+    });
+})
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const rows = document.querySelectorAll('tr[data-href]');
+//     console.log(rows);
+
+//     rows.forEach(row => {
+//         row.addEventListener('click', () => {
+//             window.location.href = row.dataset.href;
+//         })
+//     });
+// })
