@@ -40,11 +40,11 @@
     </div>
     <div class="cardDisplayFields">
         <div>Add a note: </div>
-        <form id="add-review-form" method="POST" action="/movies/<%= card._id %>/reviews">
+        <form id="add-note-form" action="/cards/<%= card._id %>/notes" method="POST">
             <label>Note:</label>
             <textarea name="note"></textarea>
-            <label>Rating:</label>
-            <!-- <select name="rating">
+            <!-- <label>Rating:</label>
+            <select name="rating">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -58,7 +58,7 @@
 
 <section id="notes">
     <div>All Notes </div>
-    <table>
+    <table class="table table-striped">
         <thead>
           <tr>
             <th>Date</th>
