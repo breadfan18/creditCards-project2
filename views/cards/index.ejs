@@ -19,10 +19,9 @@
             </tr>
         </thead>
         <tbody>
-            <% cards.forEach((card, idx) => { 
-                let currentCardHolder = users.find(user => user._id.equals(card.applicant));
-                let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`
-                %>
+            <% cards.forEach((card, idx) => { %>
+            <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
+            <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
             <tr>
                 <th scope="row"><%= idx+1 %> </th>
                 <td><%=  fullName %></td>
@@ -46,7 +45,7 @@
                     </select>
                 </td>
             </tr>
-            <% }) %>
+            <% }); %>
         </tbody>
     </table>
 </div>

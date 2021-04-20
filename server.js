@@ -28,7 +28,6 @@ app.use('/cards', cardsRouter);
 app.use('/users', usersRouter);
 
 
-
 // Tell the app to listen
 app.listen(PORT, function () {
     console.log(`Express is listening on port: ${PORT}`);

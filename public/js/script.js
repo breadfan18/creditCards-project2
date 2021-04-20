@@ -25,3 +25,6 @@ function initializeCities() {
 }
 
 $('#states').on('change', initializeCities);
+$('.navbar-nav').on('click', '.nav-link', function (e) {
+    console.log(e.target);
+})
