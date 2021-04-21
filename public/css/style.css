@@ -43,9 +43,9 @@ label{
     display: flex;
 } */
 
-/* .accountStatusChange {
+.accountStatusChange {
     display: none;
-} */
+}
 
 input[type="text"][readonly] {
     border: 2px solid rgba(0,0,0,0);
