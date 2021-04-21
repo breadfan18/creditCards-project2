@@ -6,10 +6,12 @@
     <div class="cardDisplayFields">
         <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
         <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
+        <i class="bi bi-file-person-fill"></i>
         <label>Card Holder: </label>
         <div><%= fullName %> </div>
     </div>
     <div class="cardDisplayFields">
+        <i class="bi bi-calendar-date-fill"></i>
         <label>Application Date:</label>
         <div><%= card.appDate.toLocaleDateString() %></div>
     </div>
@@ -39,7 +41,6 @@
     </div>
     <div class="cardDisplayFields addNote">
         <label>Add a note: </label>
-        <i class="bi-alarm"></i>
         <form id="add-note-form" action="/cards/<%= card._id %>/notes/new" method="POST">
             <textarea name="note"></textarea>
             <button type="submit" class="btn btn-primary">Add</button>
@@ -58,20 +59,20 @@
     <div>All Notes </div>
     <table class="table table-striped">
         <thead>
-          <tr>
-            <th>Date</th>
-            <th>Note</th>
-          </tr>
+            <tr>
+                <th>Date</th>
+                <th>Note</th>
+            </tr>
         </thead>
         <tbody>
-            <% card.notes.forEach(note => { %> 
-                <tr>
-                    <td><%= note.createdAt.toLocaleDateString() %></td>
-                    <td><%= note.note %> </td>
-                </tr>
-                <% }); %> 
+            <% card.notes.forEach(note => { %>
+            <tr>
+                <td><%= note.createdAt.toLocaleDateString() %></td>
+                <td><%= note.note %> </td>
+            </tr>
+            <% }); %>
         </tbody>
-      </table>
+    </table>
 </section>
 
 <%- include('../partials/footer') %>
