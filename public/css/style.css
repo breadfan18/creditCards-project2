@@ -26,3 +26,12 @@ label{
 .form-check-label {
     font-weight: normal;
 }
+
+#cardDetails {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
