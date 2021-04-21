@@ -8,50 +8,47 @@
         <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
         <i class="bi bi-file-person-fill"></i>
         <label>Card Holder: </label>
-        <div><%= fullName %> </div>
+        <input type="text" name="applicant" readonly value="<%= fullName %> "></input>
     </div>
     <div class="cardDisplayFields">
         <i class="bi bi-calendar-date-fill"></i>
         <label>Application Date:</label>
-        <div><%= card.appDate.toLocaleDateString() %></div>
+        <input type="text" name="appDate" readonly value="<%= card.appDate.toLocaleDateString() %> "></input>
     </div>
     <div class="cardDisplayFields">
         <label>Credit Pull:</label>
         <div>
             <% card.creditPull.forEach((pull, idx) => { %>
-            <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
-            <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
-            <% }) %>
+                <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
+                <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
+                <% }) %>
+            </div>
         </div>
-    </div>
-    <div class="cardDisplayFields">
-        <label>Bonus Spend: </label>
-        <div><%= card.bonusSpend %>
+        <div class="cardDisplayFields">
+            <label>Bonus Spend: </label>
+            <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %> "></input>
         </div>
     </div>
     <div class="cardDisplayFields">
         <label>Bonus Spend Date: </label>
-        <div><%= card.bonusSpendDate.toLocaleDateString() %>
-            <i class="bi bi-pencil-square"></i>
-        </div>
+        <input type="text" name="bonusSpendDate" readonly value="<%= card.bonusSpendDate.toLocaleDateString() %> "></input>
     </div>
     <div class="cardDisplayFields">
         <label>Annual Fee: </label>
-        <div><%= card.annualFee %>
-        </div>
+        <input type="text" name="annualFee" readonly value="<%= card.annualFee %> "></input>
     </div>
+    <div class="cardDisplayFields accountStatusShow">
+        <label>Account Status: </label>
+        <input type="text" name="accountStatus" readonly value="<%= card.accountStatus %> "></input>
+    </div>
+
+    
     <div class="cardDisplayFields addNote">
         <label>Add a note: </label>
         <form id="add-note-form" action="/cards/<%= card._id %>/notes/new" method="POST">
             <textarea name="note"></textarea>
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
-    </div>
-    <div class="cardDisplayFields accountStatusShow">
-        <label>Account Status: </label>
-        <div><%= card.accountStatus %>
-            <i class="bi bi-pencil-square"></i>
-        </div>
     </div>
     <div class="cardDisplayFields accountStatusChange">
         <label>Account Status: </label>
