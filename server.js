@@ -6,7 +6,7 @@ const PORT = 3002;
 const indexRouter = require('./routes/index');
 const cardsRouter = require('./routes/cards');
 const usersRouter = require('./routes/users');
-const reviewsRouter = require('./routes/reviews');
+const notesRouter = require('./routes/notes');
 
 
 // initialize the express app
@@ -27,6 +27,7 @@ app.use(express.static('public'));
 app.use('/', indexRouter);
 app.use('/cards', cardsRouter);
 app.use('/users', usersRouter);
+app.use('/', notesRouter);
 
 
 // Tell the app to listen

@@ -40,8 +40,7 @@
     </div>
     <div class="cardDisplayFields">
         <div>Add a note: </div>
-        <form id="add-note-form" action="/cards/<%= card._id %>/notes" method="POST">
-            <label>Note:</label>
+        <form id="add-note-form" action="/cards/<%= card._id %>/notes/new" method="POST">
             <textarea name="note"></textarea>
             <!-- <label>Rating:</label>
             <select name="rating">
@@ -66,14 +65,15 @@
           </tr>
         </thead>
         <tbody>
-            <tr>
-              <td>01/01/2021</td>
-              <td>This card's annual fee is due on 10/21/2021</td>
-            </tr>
+            <% card.notes.forEach(note => { %> 
+                <tr>
+                    <td><%= note.createdAt.toLocaleDateString() %></td>
+                    <td><%= note.note %> </td>
+                </tr>
+                <% }); %> 
         </tbody>
       </table>
 </section>
-
 
 
 <%- include('../partials/footer') %>
