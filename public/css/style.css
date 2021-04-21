@@ -19,6 +19,10 @@ body{
     background-color: rgb(204, 200, 240);
 } 
 
-.cardDisplayFields > div:first-child{
+label{
     font-weight: bold;
+}
+
+.form-check-label {
+    font-weight: normal;
 }

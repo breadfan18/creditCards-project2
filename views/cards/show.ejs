@@ -7,15 +7,15 @@
     <div class="cardDisplayFields">
         <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
         <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
-        <div>Card Holder: </div>
+        <label>Card Holder: </label>
         <div><%= fullName %> </div>
     </div>
     <div class="cardDisplayFields">
-        <div>Application Date:</div>
+        <label>Application Date:</label>
         <div><%= card.appDate.toLocaleDateString() %></div>
     </div>
     <div class="cardDisplayFields">
-        <div>Credit Pull:</div>
+        <label>Credit Pull:</label>
         <div>
             <% card.creditPull.forEach((pull, idx) => { %>
             <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
@@ -24,22 +24,22 @@
         </div>
     </div>
     <div class="cardDisplayFields">
-        <div>Bonus Spend: </div>
+        <label>Bonus Spend: </label>
         <div><%= card.bonusSpend %>
         </div>
     </div>
     <div class="cardDisplayFields">
-        <div>Bonus Spend Date: </div>
+        <label>Bonus Spend Date: </label>
         <div><%= card.bonusSpendDate.toLocaleDateString() %>
         </div>
     </div>
     <div class="cardDisplayFields">
-        <div>Annual Fee: </div>
+        <label>Annual Fee: </label>
         <div><%= card.annualFee %>
         </div>
     </div>
     <div class="cardDisplayFields">
-        <div>Add a note: </div>
+        <label>Add a note: </label>
         <form id="add-note-form" action="/cards/<%= card._id %>/notes/new" method="POST">
             <textarea name="note"></textarea>
             <!-- <label>Rating:</label>
