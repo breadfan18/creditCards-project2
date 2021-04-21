@@ -13,12 +13,17 @@ const benefitsSchema = new Schema({
     travelCredit: Number
 })
 
+const notesSchema = new Schema({
+    note: String,
+}, {
+    timestamps: true,
+});
+
 const cardsSchema = new Schema({
     applicant: {
         type: Schema.Types.ObjectId,
         ref: 'User'
     },
-    // applicant: String,
     appDate: {
         type: Date,
         default: function () {
@@ -44,7 +49,7 @@ const cardsSchema = new Schema({
         type: String,
         enum: ['Active', 'Closed', 'Downgraded']
     },
-    notes: String,
+    notes: [notesSchema],
 }, {
     timestamps: true
 })

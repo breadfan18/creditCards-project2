@@ -6,6 +6,7 @@ const PORT = 3002;
 const indexRouter = require('./routes/index');
 const cardsRouter = require('./routes/cards');
 const usersRouter = require('./routes/users');
+const reviewsRouter = require('./routes/reviews');
 
 
 // initialize the express app
