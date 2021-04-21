@@ -37,11 +37,12 @@
         <div><%= card.annualFee %>
         </div>
     </div>
-    <div class="cardDisplayFields">
+    <div class="cardDisplayFields addNote">
         <label>Add a note: </label>
+        <i class="bi-alarm"></i>
         <form id="add-note-form" action="/cards/<%= card._id %>/notes/new" method="POST">
             <textarea name="note"></textarea>
-            <input type="submit" value="Add Note"/>
+            <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>
     <!-- <div class="example">
