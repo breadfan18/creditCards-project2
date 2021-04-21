@@ -47,7 +47,8 @@ const cardsSchema = new Schema({
     benefits: [benefitsSchema],
     accountStatus: {
         type: String,
-        enum: ['Active', 'Closed', 'Downgraded']
+        enum: ['Active', 'Closed', 'Downgraded'],
+        default: 'Active'
     },
     notes: [notesSchema],
 }, {

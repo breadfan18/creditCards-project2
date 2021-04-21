@@ -32,6 +32,7 @@
     <div class="cardDisplayFields">
         <label>Bonus Spend Date: </label>
         <div><%= card.bonusSpendDate.toLocaleDateString() %>
+            <i class="bi bi-pencil-square"></i>
         </div>
     </div>
     <div class="cardDisplayFields">
@@ -46,6 +47,21 @@
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
     </div>
+    <div class="cardDisplayFields accountStatusShow">
+        <label>Account Status: </label>
+        <div><%= card.accountStatus %>
+            <i class="bi bi-pencil-square"></i>
+        </div>
+    </div>
+    <div class="cardDisplayFields accountStatusChange">
+        <label>Account Status: </label>
+        <select name="accountStatus">
+            <option value="">Active</option>
+            <option value="">Closed</option>
+            <option value="">Downgraded</option>
+        </select>
+    </div>
+
     <!-- <div class="example">
         <form>
             <label for="ex1fld1">Field 1:</label><input type="text" name="ex1fld1" readonly value="Hello"></input>

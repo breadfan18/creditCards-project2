@@ -23,6 +23,8 @@ body{
 
 label{
     font-weight: bold;
+    text-decoration:blue underline;
+    /* border-bottom: 2px solid blue; */
 }
 
 .form-check-label {
@@ -40,3 +42,7 @@ label{
 /* .addNote{
     display: flex;
 } */
+
+.accountStatusChange {
+    display: none;
+}

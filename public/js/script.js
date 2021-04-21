@@ -47,11 +47,16 @@ $(document).on('DOMContentLoaded', () => {
 })
 
 
-var readonly = true;
-$('.example input[type="button"]').on('click', function() {
-    $('.example input[type="text"]').attr('readonly', !readonly);
+// var readonly = true;
+// $('.example input[type="button"]').on('click', function() {
+//     $('.example input[type="text"]').attr('readonly', !readonly);
 
-    readonly = !readonly;
-    $('.example input[type="button"]').val( readonly ? 'Edit' : 'Save' );
-    return false;
-});
+//     readonly = !readonly;
+//     $('.example input[type="button"]').val( readonly ? 'Edit' : 'Save' );
+//     return false;
+// });
+
+// $('i').on('click', function () {
+//     $('.accountStatusShow').css('display', 'none');
+//     $('.accountStatusChange').css('display', 'block');
+// })
