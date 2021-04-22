@@ -47,28 +47,28 @@ $(document).on('DOMContentLoaded', () => {
 })
 
 
-let readonly = true;
-$('#editCardButton').on('click', function() {
-    $('.cardDisplayFields input').attr('readonly', !readonly);
-    $('.accountStatusChange').css('display', 'block');
-    $('.accountStatusShow').css('display', 'none');
+// let readonly = true;
+// $('#editCardButton').on('click', function() {
+//     $('.cardDisplayFields input').attr('readonly', !readonly);
+//     $('.accountStatusChange').css('display', 'block');
+//     $('.accountStatusShow').css('display', 'none');
 
 
-    readonly = !readonly;
-    $('#editCardButton').val( readonly ? 'Edit Card' : 'Save Card' );
-    $('#editCardButton').attr('id', 'saveCardButton');
-    return false;
-});
+//     readonly = !readonly;
+//     $('#editCardButton').val( readonly ? 'Edit Card' : 'Save Card' );
+//     $('#editCardButton').attr('id', 'saveCardButton');
+//     return false;
+// });
 
-$('#saveCardButton').on('click', function() {
-    $('.cardDisplayFields input').attr('readonly', readonly);
-    $('.accountStatusChange').css('display', 'none');
-    $('.accountStatusShow').css('display', 'block');
+// $('#saveCardButton').on('click', function() {
+//     $('.cardDisplayFields input').attr('readonly', readonly);
+//     $('.accountStatusChange').css('display', 'none');
+//     $('.accountStatusShow').css('display', 'block');
 
 
-    readonly = !readonly;
-    $('#saveCardButton').val( readonly ? 'Save Card' : 'Edit Card' );
-    $('#saveCardButton').attr('id', 'editCardButton');
-    return false;
-});
+//     readonly = !readonly;
+//     $('#saveCardButton').val( readonly ? 'Save Card' : 'Edit Card' );
+//     $('#saveCardButton').attr('id', 'editCardButton');
+//     return false;
+// });
 

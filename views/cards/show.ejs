@@ -3,7 +3,8 @@
 
 <h3><%= card.issuer %> <%= card.cardName %> </h3>
 <section>
-    <form action="" id="cardDetails">
+    <!-- the following form doesnt post when making changes to card when button is clicked -->
+    <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
         <div class="cardDisplayFields form-group">
             <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
             <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
@@ -56,7 +57,7 @@
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>
-        <input type="button" value="Edit Card" id="editCardButton"></input>
+        <input type="submit" value="Edit Card" id="editCardButton"></input>
     </form>
 </section>
 

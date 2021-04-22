@@ -1,6 +1,7 @@
 // Import required 
 const express = require('express');
 const morgan = require('morgan');
+const methodOverride = require('method-override');
 const PORT = 3002;
 
 const indexRouter = require('./routes/index');
@@ -22,6 +23,7 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
+app.use(methodOverride('_method'));
 
 // Mount the routers 
 app.use('/', indexRouter);
