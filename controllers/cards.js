@@ -5,7 +5,8 @@ module.exports = {
     index,
     new: newCard,
     create,
-    show
+    show,
+    delete: deleteCard
 }
 
 function index(req, res) {
@@ -65,4 +66,10 @@ function show(req, res) {
         })
     })
     
+}
+
+function deleteCard(req, res) {
+    Card.findByIdAndDelete(req.params.id, function(err, card) {
+        res.redirect('/cards');
+    })
 }
