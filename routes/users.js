@@ -6,5 +6,6 @@ router.get('/new', usersCtrl.new);
 router.post('/new', usersCtrl.create);
 router.delete('/:id', usersCtrl.delete);
 
+
 module.exports = router;
 
