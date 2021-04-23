@@ -6,7 +6,8 @@ module.exports = {
     new: newCard,
     create,
     show,
-    delete: deleteCard
+    delete: deleteCard, 
+    update
 }
 
 function index(req, res) {
@@ -73,3 +74,38 @@ function deleteCard(req, res) {
         res.redirect('/cards');
     })
 }
+
+
+function update(req, res) {
+    let nameSplitArr = req.body.applicant.split(' ');
+
+    let userObj = {
+        firstName: nameSplitArr[0],
+        lastName: nameSplitArr[1]
+    }
+
+    let cardObj = {
+        appDate: req.body.appDate,
+        bonusSpend: req.body.bonusSpend,
+        bonusSpendDate: req.body.bonusSpendDate,
+        annualFee: req.body.annualFee,
+        accountStatus: req.body.accountStatus
+    }
+
+
+
+    Card.findByIdAndUpdate(req.params.id, cardObj, function (err, card) {
+        // console.log(card.applicant);
+        User.findByIdAndUpdate(card.applicant, userObj, function (err, user) {
+            res.redirect('/cards');
+        })
+        
+    })
+}
+
+function splitFullName(fullName){
+    let nameSplitArr = fullName.split(' ');
+    return {
+        firstName: nameSplitArr[0],
+        lastName: nameSplitArr[1]   
+    }
