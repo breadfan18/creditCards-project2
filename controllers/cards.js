@@ -109,3 +109,4 @@ function splitFullName(fullName){
         firstName: nameSplitArr[0],
         lastName: nameSplitArr[1]   
     }
+}
