@@ -10,7 +10,7 @@
         <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
         <label><i class="bi bi-file-person-fill"></i>Card Holder: </label>
         <input type="text" name="applicant" readonly value="<%= fullName %> "></input>
-        
+
         <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
         <input type="text" name="appDate" readonly value="<%= card.appDate.toLocaleDateString() %> "></input>
 
@@ -26,7 +26,8 @@
         <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
 
         <label><i class="bi bi-file-person-fill"></i>Bonus Spend Date: </label>
-        <input type="text" name="bonusSpendDate" readonly value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
+        <input type="text" name="bonusSpendDate" readonly
+            value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
 
         <label><i class="bi bi-file-person-fill"></i>Annual Fee: </label>
         <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
@@ -34,10 +35,11 @@
         <label><i class="bi bi-file-person-fill"></i>Account Status: </label>
         <input type="text" name="accountStatus" readonly value="<%= card.accountStatus %>"></input>
 
+
         
-        <button id="editCardButton">Edit Card</button>
         <button type="submit" value="Submit" id="updateButton">Submit</button>
     </form>
+    <button id="editCardButton">Edit Card</button>
 </section>
 
 

@@ -8,7 +8,7 @@ router.get('/new', cardsCtrl.new);
 router.post('/', cardsCtrl.create);
 router.get('/:id', cardsCtrl.show);
 router.delete('/:id', cardsCtrl.delete);
-router.put('/:', cardsCtrl.update);
+router.put('/:id', cardsCtrl.update);
 
 
 
