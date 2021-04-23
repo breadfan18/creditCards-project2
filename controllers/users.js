@@ -3,11 +3,11 @@ const User = require('../models/user');
 
 module.exports = {
     new: addNewUser,
-    create
+    create,
+    delete: deleteUser
 }
 
 function addNewUser(req, res) {
-    // res.render('users/new');
     User.find({}, function(err, users){
         res.render('users/new', {
             users
@@ -21,6 +21,12 @@ function create(req, res) {
             console.log('could not add user');
             console.log(err);
         }
+        res.redirect('/users/new');
+    })
+}
+
+function deleteUser(req, res) {
+    User.findByIdAndDelete(req.params.id, function (err, user) {
         res.redirect('/users/new');
     })
 }

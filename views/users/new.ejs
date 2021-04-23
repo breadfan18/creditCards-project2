@@ -54,7 +54,11 @@
                     <td><%= user.city %> </td>
                     <td><%= user.state %> </td>
                     <td><%= user.dob.toLocaleDateString() %> </td>
-                    <td><button type="button" class="btn btn-outline-danger">Remove</button></td>
+                    <td>
+                        <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
                 <% }); %>
             </tbody>
