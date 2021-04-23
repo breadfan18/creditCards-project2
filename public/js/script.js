@@ -47,18 +47,18 @@ $(document).on('DOMContentLoaded', () => {
 })
 
 
-// let readonly = true;
-// $('#editCardButton').on('click', function() {
-//     $('.cardDisplayFields input').attr('readonly', !readonly);
-//     $('.accountStatusChange').css('display', 'block');
-//     $('.accountStatusShow').css('display', 'none');
+let readonly = true;
+$('#editCardButton').on('click', function() {
+    $('input').attr('readonly', !readonly);
+    // $('.accountStatusChange').css('display', 'block');
+    // $('.accountStatusShow').css('display', 'none');
 
 
-//     readonly = !readonly;
-//     $('#editCardButton').val( readonly ? 'Edit Card' : 'Save Card' );
-//     $('#editCardButton').attr('id', 'saveCardButton');
-//     return false;
-// });
+    // readonly = !readonly;
+    // $('#editCardButton').val( readonly ? 'Edit Card' : 'Save Card' );
+    // $('#editCardButton').attr('id', 'saveCardButton');
+    // return false;
+});
 
 // $('#saveCardButton').on('click', function() {
 //     $('.cardDisplayFields input').attr('readonly', readonly);
