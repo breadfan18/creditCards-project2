@@ -60,7 +60,7 @@
 <section id="notes">
     <div class="addNote">
         <label><i class="bi bi-file-person-fill"></i>Add a note: </label>
-        <form id="add-note-form" action="/cards/<%= card._id %>/notes/new" method="POST">
+        <form id="add-note-form" action="/cards/<%= card._id %>/notes" method="POST">
             <textarea name="note"></textarea>
             <button type="submit" class="btn btn-primary">Add</button>
         </form>
@@ -71,6 +71,7 @@
             <tr>
                 <th>Date</th>
                 <th>Note</th>
+                <th>Delete Note</th>
             </tr>
         </thead>
         <tbody>
@@ -78,6 +79,11 @@
             <tr>
                 <td><%= note.createdAt.toLocaleDateString() %></td>
                 <td><%= note.note %> </td>
+                <td>
+                    <form action="/cards/<%= card._id %>/notes/<%= note._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             <% }); %>
         </tbody>

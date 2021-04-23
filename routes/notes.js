@@ -2,7 +2,7 @@ const express = require('express');
 const notesCtrl = require('../controllers/notes');
 const router = express.Router();
 
-// Router to the root route. that is localhost:3002
-router.post('/cards/:id/notes/new', notesCtrl.new);
+router.post('/cards/:id/notes', notesCtrl.new);
+router.delete('/cards/:id/notes/:notes_id', notesCtrl.delete);
 
 module.exports = router;
