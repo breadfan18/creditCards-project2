@@ -50,8 +50,8 @@ $(document).on('DOMContentLoaded', () => {
 let readonly = true;
 $('#editCardButton').on('click', function() {
     $('input').attr('readonly', !readonly);
-    // $('.accountStatusChange').css('display', 'block');
-    // $('.accountStatusShow').css('display', 'none');
+    $('#accountStatusChange').css('display', 'block');
+    $('#accountStatus').css('display', 'none');
 
 
     // readonly = !readonly;

@@ -30,3 +30,9 @@ function create(req, res) {
 
 }
 
+
+- When trying to submit the changes to card, i wanted the first button to edit card, and the second to submit
+- Found out when submitting an HTML5 form, button has a type of submit by default, so if you don't waht
+- the button to submit, you have to explicitly change its type to..lets say button
+    <button type="button" id="editCardButton">Edit Card</button>
+    <button type="submit" value="Submit" id="updateButton">Submit</button>

@@ -77,6 +77,7 @@ function deleteCard(req, res) {
 
 
 function update(req, res) {
+    console.log(req.body);
     let nameSplitArr = req.body.applicant.split(' ');
 
     let userObj = {
@@ -92,10 +93,7 @@ function update(req, res) {
         accountStatus: req.body.accountStatus
     }
 
-
-
     Card.findByIdAndUpdate(req.params.id, cardObj, function (err, card) {
-        // console.log(card.applicant);
         User.findByIdAndUpdate(card.applicant, userObj, function (err, user) {
             res.redirect('/cards');
         })
