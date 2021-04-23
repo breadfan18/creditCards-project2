@@ -13,6 +13,7 @@
                 <th scope="col">Next Fee Date</th>
                 <th scope="col">Credit Line</th>
                 <th scope="col">Account Status</th>
+                <th scope="col">Delete?</th>
             </tr>
         </thead>
         <tbody>
@@ -33,12 +34,11 @@
                     <td>$<%= card.annualFee %> </td>
                     <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
                     <td>$<%= card.creditLine %> </td>
+                    <td><%= card.accountStatus %> </td>
                     <td>
-                        <select name="" id="">
-                            <option value="">Active</option>
-                            <option value="">Closed</option>
-                            <option value="">Downgraded</option>
-                        </select>
+                        <form action="/cards/<%= card._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
             <% }); %>
