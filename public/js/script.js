@@ -49,26 +49,37 @@ $(document).on('DOMContentLoaded', () => {
 
 let readonly = true;
 $('#editCardButton').on('click', function() {
-    $('input').attr('readonly', !readonly);
-    $('#accountStatusChange').css('display', 'block');
-    $('#accountStatus').css('display', 'none');
+
+    if($(this).html() === 'Edit Card'){
+        $('input').attr('readonly', !readonly);
+        $('#accountStatusChange').css('display', 'block');
+        $('#accountStatus').css('display', 'none');
+        $('#cardHolderChange').css('display', 'block');
+        $('#applicantOld').css('display', 'none');
+        readonly = !readonly;
+    } else {
+        $('input').attr('readonly', readonly);
+        $('#accountStatusChange').css('display', 'none');
+        $('#accountStatus').css('display', 'block');
+        $('#cardHolderChange').css('display', 'none');
+        $('#applicantOld').css('display', 'block');
+        $('#updateButton').prop('disabled', true);
+        readonly = !readonly;
+    }
 
 
-    // readonly = !readonly;
-    // $('#editCardButton').val( readonly ? 'Edit Card' : 'Save Card' );
-    // $('#editCardButton').attr('id', 'saveCardButton');
-    // return false;
+
+
+    $(this).html( readonly ? 'Edit Card' : 'Cancel' );
+    return false;
 });
 
-// $('#saveCardButton').on('click', function() {
-//     $('.cardDisplayFields input').attr('readonly', readonly);
-//     $('.accountStatusChange').css('display', 'none');
-//     $('.accountStatusShow').css('display', 'block');
+
+$('#cardDetails').on('keypress', 'input', function () {
+    $('#updateButton').prop('disabled', false);
+})
 
 
-//     readonly = !readonly;
-//     $('#saveCardButton').val( readonly ? 'Save Card' : 'Edit Card' );
-//     $('#saveCardButton').attr('id', 'editCardButton');
-//     return false;
-// });
-
+$('#cardDetails').on('click', 'select', function () {
+    $('#updateButton').prop('disabled', false);
+})

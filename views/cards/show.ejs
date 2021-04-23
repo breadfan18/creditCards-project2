@@ -4,12 +4,19 @@
 <h3><%= card.issuer %> <%= card.cardName %> </h3>
 
 
-<section>
+<section class="form-group">
     <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
         <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
         <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
         <label><i class="bi bi-file-person-fill"></i>Card Holder: </label>
-        <input type="text" name="applicant" readonly value="<%= fullName %> "></input>
+        <input type="text" name="applicantOld" id="applicantOld" readonly value="<%= fullName %> "></input>
+
+        <select id="cardHolderChange" name="applicant">
+            <% users.forEach(user => { %>
+                <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %></option>
+            <% }); %> 
+        </select>
+
 
         <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
         <input type="text" name="appDate" readonly value="<%= card.appDate.toLocaleDateString() %> "></input>
@@ -22,6 +29,9 @@
             <% }) %>
         </div>
 
+        <label><i class="bi bi-file-person-fill"></i>Credit Line: </label>
+        <input type="text" name="creditLine" readonly value="<%= card.creditLine %>"></input>
+
         <label><i class="bi bi-file-person-fill"></i>Bonus Spend: </label>
         <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
 
@@ -33,17 +43,16 @@
         <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
 
         <label><i class="bi bi-file-person-fill"></i>Account Status: </label>
-        <input name="accountStatusOld" id="accountStatus" type="text" readonly value="<%= card.accountStatus %>"></input>
+        <input name="accountStatusOld" id="accountStatus" type="text" readonly
+            value="<%= card.accountStatus %>"></input>
         <select name="accountStatus" id="accountStatusChange">
             <option value="Active">Active</option>
             <option value="Closed">Closed</option>
             <option value="Downgraded">Downgraded</option>
         </select>
 
-
-        
         <button type="button" id="editCardButton">Edit Card</button>
-        <button type="submit" value="Submit" id="updateButton">Submit</button>
+        <button type="submit" value="Submit" id="updateButton" disabled>Submit</button>
     </form>
 </section>
 

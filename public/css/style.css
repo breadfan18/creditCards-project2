@@ -43,7 +43,7 @@ label{
     display: flex;
 } */
 
-#accountStatusChange {
+#accountStatusChange, #cardHolderChange {
     display: none;
 }
 

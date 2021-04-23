@@ -21,20 +21,20 @@
             <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
             <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
 
-                <tr data-href="/cards/<%= card._id %> ">
+                <tr data-href="/cards/<%= card._id %>">
                     <td><%= fullName %></td>
-                    <td><%= card.issuer %> <%= card.cardName %> </td>
-                    <td><%= card.appDate.toLocaleDateString() %> </td>
+                    <td><%= card.issuer %> <%= card.cardName %></td>
+                    <td><%= card.appDate.toLocaleDateString() %></td>
                     <td>
                         <% card.creditPull.forEach((pull, idx) => { %>
                         <%  let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
-                        <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
+                        <div><%= pull === null ? '' : creditBureaus[idx]; %></div>
                         <% }) %>
                     </td>
                     <td>$<%= card.annualFee %> </td>
-                    <td><%= card.nextFeeDate.toLocaleDateString() %> </td>
-                    <td>$<%= card.creditLine %> </td>
-                    <td><%= card.accountStatus %> </td>
+                    <td><%= card.nextFeeDate.toLocaleDateString() %></td>
+                    <td>$<%= card.creditLine %></td>
+                    <td><%= card.accountStatus %></td>
                     <td>
                         <form action="/cards/<%= card._id %>?_method=DELETE" method="POST">
                             <button type="submit" class="btn btn-sm btn-danger">Delete</button>
