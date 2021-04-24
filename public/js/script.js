@@ -51,14 +51,14 @@ let readonly = true;
 $('#editCardButton').on('click', function() {
 
     if($(this).html() === 'Edit Card'){
-        $('input').attr('readonly', !readonly);
+        $('input').prop('readonly', !readonly);
         $('#accountStatusChange').css('display', 'block');
         $('#accountStatus').css('display', 'none');
         $('#cardHolderChange').css('display', 'block');
         $('#applicantOld').css('display', 'none');
         readonly = !readonly;
     } else {
-        $('input').attr('readonly', readonly);
+        $('input').prop('readonly', true);
         $('#accountStatusChange').css('display', 'none');
         $('#accountStatus').css('display', 'block');
         $('#cardHolderChange').css('display', 'none');
@@ -67,19 +67,16 @@ $('#editCardButton').on('click', function() {
         readonly = !readonly;
     }
 
-
-
-
     $(this).html( readonly ? 'Edit Card' : 'Cancel' );
     return false;
 });
 
-
+// event listener to enable edit card submit button on keypress in input field
 $('#cardDetails').on('keypress', 'input', function () {
     $('#updateButton').prop('disabled', false);
 })
 
-
+// event listener to enable edit card submit button on click on a select field
 $('#cardDetails').on('click', 'select', function () {
     $('#updateButton').prop('disabled', false);
 })
