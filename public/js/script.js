@@ -49,7 +49,6 @@ $(document).on('DOMContentLoaded', () => {
 
 let readonly = true;
 $('#editCardButton').on('click', function() {
-
     if($(this).html() === 'Edit Card'){
         $('input').prop('readonly', !readonly);
         $('#accountStatusChange').css('display', 'block');
@@ -66,7 +65,6 @@ $('#editCardButton').on('click', function() {
         $('#updateButton').prop('disabled', true);
         readonly = !readonly;
     }
-
     $(this).html( readonly ? 'Edit Card' : 'Cancel' );
     return false;
 });

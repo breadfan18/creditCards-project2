@@ -4,7 +4,7 @@
 <h3><%= card.issuer %> <%= card.cardName %> </h3>
 
 
-<section class="form-group">
+<section>
     <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
         <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
         <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
@@ -19,7 +19,7 @@
 
 
         <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
-        <input type="text" name="appDate" readonly value="<%= card.appDate.toLocaleDateString() %> "></input>
+        <input class="dateField" type="text" name="appDate" readonly value="<%= card.appDate.toLocaleDateString() %> "></input>
 
         <label><i class="bi bi-file-person-fill"></i>Credit Pull:</label>
         <div>
@@ -36,7 +36,7 @@
         <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
 
         <label><i class="bi bi-file-person-fill"></i>Bonus Spend Date: </label>
-        <input type="text" name="bonusSpendDate" readonly
+        <input class="dateField" type="text" name="bonusSpendDate" readonly
             value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
 
         <label><i class="bi bi-file-person-fill"></i>Annual Fee: </label>
