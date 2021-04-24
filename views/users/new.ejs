@@ -56,7 +56,7 @@
                     <td><%= user.dob.toLocaleDateString() %> </td>
                     <td>
                         <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger" <% cards.forEach(card => { %><%= user._id.equals(card.applicant) ? 'disabled' : null %><% }); %>>Delete</button>
                         </form>
                     </td>
                 </tr>

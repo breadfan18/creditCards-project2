@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('../models/user');
+const Card = require('../models/card');
 
 module.exports = {
     new: addNewUser,
@@ -9,9 +10,12 @@ module.exports = {
 
 function addNewUser(req, res) {
     User.find({}, function(err, users){
-        res.render('users/new', {
-            users
-        });
+        Card.find({}, function (err, cards) {
+            res.render('users/new', {
+                users,
+                cards
+            });
+        })
     })
 }
 
