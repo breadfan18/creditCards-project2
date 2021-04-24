@@ -2,6 +2,7 @@
 
 body{
     border: 15px solid white;
+    box-sizing: border-box;
     border-bottom: none;
     display: flex;
     flex-direction: column;
@@ -14,7 +15,6 @@ main {
     /* justify-content: space-evenly; */
     flex-direction: column;
     flex-grow: 1;
-    margin-top: 20px;
 } 
 
 footer {
@@ -93,8 +93,13 @@ input[type="text"][readonly] {
     border: none;
 }
 
+.nav-tabs {
+    margin-top: 5px;
+}
+
 .nav-tabs a:hover {
     background-color: rgb(194, 192, 192);
     color: white;
     border: none;
 }
+

@@ -78,3 +78,12 @@ $('#cardDetails').on('keypress', 'input', function () {
 $('#cardDetails').on('click', 'select', function () {
     $('#updateButton').prop('disabled', false);
 })
+
+
+$(document).ready(function () {
+    console.log(this);
+   let test = $('.status');
+
+   console.log(test);
+    
+})
