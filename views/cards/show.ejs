@@ -12,6 +12,7 @@
         <input type="text" name="applicantOld" id="applicantOld" readonly value="<%= fullName %> "></input>
 
         <select id="cardHolderChange" name="applicant">
+            <option value="<%= fullName %>" selected><%= fullName %> </option>
             <% users.forEach(user => { %>
                 <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %></option>
             <% }); %> 
