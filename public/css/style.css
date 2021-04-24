@@ -80,17 +80,17 @@ input[type="text"][readonly] {
 }
 
 .table-responsive {
-    margin-top: 10px;
+    border-top: 5px solid gray;
+}
+
+.table-responsive * {
+    margin: 3px;
 }
 
 .nav-item.nav-link.active {
     background-color: gray;
     color: white;
     border: none;
-}
-
-.nav-tabs {
-    border-bottom: 5px solid gray;
 }
 
 .nav-tabs a:hover {
