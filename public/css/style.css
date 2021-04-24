@@ -79,3 +79,22 @@ input[type="text"][readonly] {
     border: 2px solid rgba(0,0,0,0);
 }
 
+.table-responsive {
+    margin-top: 10px;
+}
+
+.nav-item.nav-link.active {
+    background-color: gray;
+    color: white;
+    border: none;
+}
+
+.nav-tabs {
+    border-bottom: 5px solid gray;
+}
+
+.nav-tabs a:hover {
+    background-color: rgb(194, 192, 192);
+    color: white;
+    border: none;
+}
