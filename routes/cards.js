@@ -10,6 +10,4 @@ router.get('/:id', cardsCtrl.show);
 router.delete('/:id', cardsCtrl.delete);
 router.put('/:id', cardsCtrl.update);
 
-
-
 module.exports = router;

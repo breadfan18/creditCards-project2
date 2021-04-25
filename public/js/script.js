@@ -1,4 +1,3 @@
-
 // Initialize city and state functionality in the add user page
 
 // First call the function for cityState.js in the helpers folder that returns the city/stage object
@@ -24,16 +23,16 @@ function initializeCities() {
         let $newCityRow = $(`
         <option value="${city}">${city}</option>
     `)
-    $('#cities').append($newCityRow);
+        $('#cities').append($newCityRow);
     })
 }
 
 $('#states').on('change', initializeCities);
 
 // Initilize DataTables CDN 
-$(document).ready( function () {
+$(document).ready(function () {
     $('.table').DataTable();
-} );
+});
 
 
 // Script to make the table rows clickable 
@@ -48,8 +47,8 @@ $(document).on('DOMContentLoaded', () => {
 
 
 let readonly = true;
-$('#editCardButton').on('click', function() {
-    if($(this).html() === 'Edit Card'){
+$('#editCardButton').on('click', function () {
+    if ($(this).html() === 'Edit Card') {
         $('input').prop('readonly', !readonly);
         $('#accountStatusChange').css('display', 'block');
         $('#accountStatus').css('display', 'none');
@@ -65,7 +64,7 @@ $('#editCardButton').on('click', function() {
         $('#updateButton').prop('disabled', true);
         readonly = !readonly;
     }
-    $(this).html( readonly ? 'Edit Card' : 'Cancel' );
+    $(this).html(readonly ? 'Edit Card' : 'Cancel');
     return false;
 });
 
@@ -79,11 +78,17 @@ $('#cardDetails').on('click', 'select', function () {
     $('#updateButton').prop('disabled', false);
 })
 
-
+// listener that runs on page load, that will change closed, downgraded cards to a different color by adding class names. 
 $(document).ready(function () {
-    console.log(this);
-   let test = $('.status');
+    let accountStatuses = $('.status');
 
-   console.log(test);
-    
+    accountStatuses.each(function (index) {
+        if ($(this).text() === 'Closed') {
+            $(this).closest('tr').addClass('table-warning');
+        } else if ($(this).text() === 'Downgraded') {
+            $(this).closest('tr').addClass('table-danger');
+        }
+    })
+
+
 })
