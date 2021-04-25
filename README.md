@@ -15,12 +15,14 @@ Netlify:
     - CSS Grid
 - Javascript
 - jQuery
+- jQuery DataTables
 - AJAX
 - MONGODB
 - MONGOOSE
 - NODE.JS
 - EJS
 - EJS PARTIALS
+- WebdriverIO 
 
 
 ## Wireframes 
