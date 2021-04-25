@@ -81,10 +81,8 @@ $('#cardDetails').on('click', 'select', function () {
 // listener that runs on page load, that will change closed, downgraded cards to a different color by adding class names. 
 $(document).ready(function () {
     let accountStatuses = $('.status');
-
     accountStatuses.each(function () {
         if ($(this).text() === 'Closed') {
-
             $(this).closest('tr').addClass('table-danger');
         } else if ($(this).text() === 'Downgraded') {
             $(this).closest('tr').addClass('table-warning');
