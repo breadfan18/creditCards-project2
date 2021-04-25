@@ -82,11 +82,12 @@ $('#cardDetails').on('click', 'select', function () {
 $(document).ready(function () {
     let accountStatuses = $('.status');
 
-    accountStatuses.each(function (index) {
+    accountStatuses.each(function () {
         if ($(this).text() === 'Closed') {
-            $(this).closest('tr').addClass('table-warning');
-        } else if ($(this).text() === 'Downgraded') {
+
             $(this).closest('tr').addClass('table-danger');
+        } else if ($(this).text() === 'Downgraded') {
+            $(this).closest('tr').addClass('table-warning');
         }
     })
 
