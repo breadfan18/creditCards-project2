@@ -100,7 +100,7 @@
                                 <td>$<%= card.annualFee %> </td>
                                 <td><%= card.nextFeeDate.toLocaleDateString() %></td>
                                 <td>$<%= card.creditLine %></td>
-                                <td><%= card.accountStatus %></td>
+                                <td class="status"><%= card.accountStatus %></td>
                                 <td>
                                     <form action="/cards/<%= card._id %>?_method=DELETE" method="POST">
                                         <button type="submit" class="btn btn-sm btn-danger">Delete</button>
