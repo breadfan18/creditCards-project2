@@ -31,6 +31,8 @@ function newCard(req, res) {
 }
 
 function create(req, res) {
+    console.log(req.body)
+
     let nameSplitArr = req.body.applicant.split(' ');
     User.findOne({
         firstName: nameSplitArr[0],
