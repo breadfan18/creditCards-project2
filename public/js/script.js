@@ -88,6 +88,4 @@ $(document).ready(function () {
             $(this).closest('tr').addClass('table-warning');
         }
     })
-
-
 })
