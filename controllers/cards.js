@@ -31,8 +31,6 @@ function newCard(req, res) {
 }
 
 function create(req, res) {
-    console.log(req.body)
-
     let nameSplitArr = req.body.applicant.split(' ');
     User.findOne({
         firstName: nameSplitArr[0],
@@ -50,7 +48,6 @@ function create(req, res) {
             bonusSpendDate: req.body.bonusSpendDate,
             annualFee: req.body.annualFee
         }
-    
         Card.create(newCardObj, function(err, card){
             if(err) return res.redirect('/cards/new');
             res.redirect('/cards');

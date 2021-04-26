@@ -13,16 +13,24 @@ Netlify:
 - CSS3
     - CSS Flexbox
     - CSS Grid
+    - Bootstrap CDN
 - Javascript
 - jQuery
 - jQuery DataTables
 - AJAX
-- MONGODB
-- MONGOOSE
-- NODE.JS
-- EJS
-- EJS PARTIALS
-- WebdriverIO 
+- MongoDB
+- Node.JS
+- Express.JS
+
+
+## Other NPM Packages Used
+- Mongoose
+- Ejs
+- Bootstrap Icons
+- Method-Override
+- Morgan
+- WebdriverIO (package that helps run automated tests)
+- Chance (package that helps create random data)
 
 
 ## Wireframes 
