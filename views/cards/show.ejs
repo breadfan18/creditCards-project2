@@ -1,94 +1,102 @@
 <%- include('../partials/header') %>
 
 
-<h3><%= card.issuer %> <%= card.cardName %> </h3>
-
-
-<section>
-    <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
-        <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
-        <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
-        <label><i class="bi bi-file-person-fill"></i>Card Holder: </label>
-        <input type="text" name="applicantOld" id="applicantOld" readonly value="<%= fullName %> "></input>
-
-        <select id="cardHolderChange" name="applicant">
-            <option value="<%= fullName %>" selected><%= fullName %> </option>
-            <% users.forEach(user => { %>
-                <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %></option>
-            <% }); %> 
-        </select>
-
-
-        <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
-        <input class="dateField" type="text" name="appDate" readonly value="<%= card.appDate.toLocaleDateString() %> "></input>
-
-        <label><i class="bi bi-file-person-fill"></i>Credit Pull:</label>
-        <div>
-            <% card.creditPull.forEach((pull, idx) => { %>
-            <% let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
-            <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
-            <% }) %>
+<main id="editCardsPage">
+    <section id="editCardSection">
+        <div class="sectionHeader first">
+            <h3>Edit Card</h3>
+            <p>Change any card details and click Submit</p>
         </div>
+        <h4><%= card.issuer %> <%= card.cardName %> </h4>
+        <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
+            <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
+            <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
+            <label><i class="bi bi-file-person-fill"></i>Card Holder: </label>
+            <input type="text" name="applicantOld" id="applicantOld" readonly value="<%= fullName %> "></input>
 
-        <label><i class="bi bi-file-person-fill"></i>Credit Line: </label>
-        <input type="text" name="creditLine" readonly value="<%= card.creditLine %>"></input>
-
-        <label><i class="bi bi-file-person-fill"></i>Bonus Spend: </label>
-        <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
-
-        <label><i class="bi bi-file-person-fill"></i>Bonus Spend Date: </label>
-        <input class="dateField" type="text" name="bonusSpendDate" readonly
-            value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
-
-        <label><i class="bi bi-file-person-fill"></i>Annual Fee: </label>
-        <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
-
-        <label><i class="bi bi-file-person-fill"></i>Account Status: </label>
-        <input name="accountStatusOld" id="accountStatus" type="text" readonly
-            value="<%= card.accountStatus %>"></input>
-        <select name="accountStatus" id="accountStatusChange">
-            <option value="Active">Active</option>
-            <option value="Closed">Closed</option>
-            <option value="Downgraded">Downgraded</option>
-        </select>
-
-        <button type="button" id="editCardButton">Edit Card</button>
-        <button type="submit" value="Submit" id="updateButton" disabled>Submit</button>
-    </form>
-</section>
+            <select id="cardHolderChange" name="applicant">
+                <option value="<%= fullName %>" selected><%= fullName %> </option>
+                <% users.forEach(user => { %>
+                <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %>
+                </option>
+                <% }); %>
+            </select>
 
 
-<section id="notes">
-    <div class="addNote">
-        <label><i class="bi bi-file-person-fill"></i>Add a note: </label>
-        <form id="add-note-form" action="/cards/<%= card._id %>/notes" method="POST">
-            <textarea name="note"></textarea>
-            <button type="submit" class="btn btn-primary">Add</button>
+            <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
+            <input class="dateField" type="text" name="appDate" readonly
+                value="<%= card.appDate.toLocaleDateString() %> "></input>
+
+            <label><i class="bi bi-file-person-fill"></i>Credit Pull:</label>
+            <div>
+                <% card.creditPull.forEach((pull, idx) => { %>
+                <% let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
+                <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
+                <% }) %>
+            </div>
+
+            <label><i class="bi bi-file-person-fill"></i>Credit Line: </label>
+            <input type="text" name="creditLine" readonly value="<%= card.creditLine %>"></input>
+
+            <label><i class="bi bi-file-person-fill"></i>Bonus Spend: </label>
+            <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
+
+            <label><i class="bi bi-file-person-fill"></i>Bonus Spend Date: </label>
+            <input class="dateField" type="text" name="bonusSpendDate" readonly
+                value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
+
+            <label><i class="bi bi-file-person-fill"></i>Annual Fee: </label>
+            <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
+
+            <label><i class="bi bi-file-person-fill"></i>Account Status: </label>
+            <input name="accountStatusOld" id="accountStatus" type="text" readonly
+                value="<%= card.accountStatus %>"></input>
+            <select name="accountStatus" id="accountStatusChange">
+                <option value="Active">Active</option>
+                <option value="Closed">Closed</option>
+                <option value="Downgraded">Downgraded</option>
+            </select>
+
+            <button class="btn btn-primary" type="button" id="editCardButton">Edit Card</button>
+            <button class="btn btn-primary" type="submit" value="Submit" id="updateButton" disabled>Submit</button>
         </form>
-    </div>
-    <h3>All Notes</h3>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Date</th>
-                <th>Note</th>
-                <th>Delete Note</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% card.notes.forEach(note => { %>
-            <tr>
-                <td><%= note.createdAt.toLocaleDateString() %></td>
-                <td><%= note.note %> </td>
-                <td>
-                    <form action="/cards/<%= card._id %>/notes/<%= note._id %>?_method=DELETE" method="POST">
-                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
-                    </form>
-                </td>
-            </tr>
-            <% }); %>
-        </tbody>
-    </table>
-</section>
+    </section>
+    <section id="notes">
+        <div class="sectionHeader">
+            <h3>Card Notes</h3>
+            <p>Please add any notes relevent to this card</p>
+        </div>
+        <div class="addNote">
+            <h4>Add a note: </h4>
+            <form id="add-note-form" action="/cards/<%= card._id %>/notes" method="POST">
+                <textarea name="note"></textarea>
+                <button type="submit" class="btn btn-primary">Add</button>
+            </form>
+        </div>
+        <h3>All Notes</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Note</th>
+                    <th>Delete Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% card.notes.forEach(note => { %>
+                <tr>
+                    <td><%= note.createdAt.toLocaleDateString() %></td>
+                    <td><%= note.note %> </td>
+                    <td>
+                        <form action="/cards/<%= card._id %>/notes/<%= note._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </section>
+</main>
 
 <%- include('../partials/footer') %>

@@ -25,7 +25,7 @@ Netlify:
 
 ## Other NPM Packages Used
 - Mongoose
-- Ejs
+- EJS
 - Bootstrap Icons
 - Method-Override
 - Morgan

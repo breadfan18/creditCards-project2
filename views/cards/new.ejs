@@ -1,84 +1,91 @@
 <%- include('../partials/header') %>
 
-<form action="/cards" method="POST">
-    <div class="form-group">
-        <label for="cardHolder">Card Holder</label>
-        <select class="form-control" id="cardHolder" name="applicant">
-            <option value="" disabled selected>Choose Cardholder</option>
-            <% users.forEach(user => { %>
-                <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %></option>
-            <% }); %> 
-        </select>
+<main>
+    <div class="sectionHeader">
+        <h3>Add a Card</h3>
+        <p>Please submit all required information</p>
     </div>
-    <div class="form-group">
-        <label for="issuer">Card Issuer</label>
-        <select class="form-control" id="issuer" name="issuer">
-            <option value="" disabled selected>Choose Issuer</option>
-            <option>Chase</option>
-            <option>American Express</option>
-            <option>BarclayCard</option>
-            <option>CapitalOne</option>
-            <option>Citi</option>
-            <option>Discover</option>
-            <option>Wells Fargo</option>
-            <option>US Bank</option>
-            <option>PNC</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="cardName">Card Name</label>
-        <input type="text" class="form-control" id="cardName" name="cardName">
-    </div>
-    <div class="form-group">
-        <label for="appDate">App Date</label>
-        <input type="date" class="form-control" id="appDate" name="appDate">
-    </div>
-
-
-    <div id="creditPull">
-        <label for="creditPull">Credit Pull</label>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="experian" name="experian">
-            <label class="form-check-label" for="experian">
-                Experian
-            </label>
+    <form action="/cards" method="POST" id="addCardForm">
+        <div class="form-group">
+            <label for="cardHolder">Card Holder</label>
+            <select class="form-control" id="cardHolder" name="applicant">
+                <option value="" disabled selected>Choose Cardholder</option>
+                <% users.forEach(user => { %>
+                <option value="<%= user.firstName %> <%= user.lastName %>"><%= user.firstName %> <%= user.lastName %>
+                </option>
+                <% }); %>
+            </select>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="equifax" name="equifax">
-            <label class="form-check-label" for="equifax">
-                Equifax
-            </label>
+        <div class="form-group">
+            <label for="issuer">Card Issuer</label>
+            <select class="form-control" id="issuer" name="issuer">
+                <option value="" disabled selected>Choose Issuer</option>
+                <option>Chase</option>
+                <option>American Express</option>
+                <option>BarclayCard</option>
+                <option>CapitalOne</option>
+                <option>Citi</option>
+                <option>Discover</option>
+                <option>Wells Fargo</option>
+                <option>US Bank</option>
+                <option>PNC</option>
+            </select>
         </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="transunion" name="transunion">
-            <label class="form-check-label" for="transunion">
-                Transunion
-            </label>
+        <div class="form-group">
+            <label for="cardName">Card Name</label>
+            <input type="text" class="form-control" id="cardName" name="cardName">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="appDate">App Date</label>
+            <input type="date" class="form-control" id="appDate" name="appDate">
+        </div>
 
 
-    <div class="form-group">
-        <label for="nextFeeDate">Next Fee Date</label>
-        <input type="date" class="form-control" id="nextFeeDate" name="nextFeeDate">
-    </div>
-    <div class="form-group">
-        <label for="creditLine">Credit Line</label>
-        <input type="text" class="form-control" id="creditLine" name="creditLine">
-    </div>
-    <div class="form-group">
-        <label for="bonusSpend">Bonus Spend</label>
-        <input type="text" class="form-control" id="bonusSpend" name="bonusSpend">
-    </div>
-    <div class="form-group">
-        <label for="bonusSpendDate">Bonus Spend Date</label>
-        <input type="date" class="form-control" id="bonusSpendDate" name="bonusSpendDate">
-    </div>
-    <div class="form-group">
-        <label for="annualFee">Annual Fee</label>
-        <input type="text" class="form-control" id="annualFee" name="annualFee">
-    </div>
-    <button type="submit" class="btn btn-primary">Add Card</button>
-</form>
+        <div id="creditPull">
+            <label for="creditPull">Credit Pull</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="experian" name="experian">
+                <label class="form-check-label" for="experian">
+                    Experian
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="equifax" name="equifax">
+                <label class="form-check-label" for="equifax">
+                    Equifax
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="transunion" name="transunion">
+                <label class="form-check-label" for="transunion">
+                    Transunion
+                </label>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="nextFeeDate">Next Fee Date</label>
+            <input type="date" class="form-control" id="nextFeeDate" name="nextFeeDate">
+        </div>
+        <div class="form-group">
+            <label for="creditLine">Credit Line</label>
+            <input type="text" class="form-control" id="creditLine" name="creditLine">
+        </div>
+        <div class="form-group">
+            <label for="bonusSpend">Bonus Spend</label>
+            <input type="text" class="form-control" id="bonusSpend" name="bonusSpend">
+        </div>
+        <div class="form-group">
+            <label for="bonusSpendDate">Bonus Spend Date</label>
+            <input type="date" class="form-control" id="bonusSpendDate" name="bonusSpendDate">
+        </div>
+        <div class="form-group">
+            <label for="annualFee">Annual Fee</label>
+            <input type="text" class="form-control" id="annualFee" name="annualFee">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Card</button>
+    </form>
+</main>
 
 <%- include('../partials/footer') %>

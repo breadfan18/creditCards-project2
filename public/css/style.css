@@ -116,7 +116,7 @@ input[type="text"][readonly] {
 
 
 /* Add Users Page */
-#usersPage {
+#usersPage, #editCardsPage{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -124,7 +124,7 @@ input[type="text"][readonly] {
     margin: 10px 0 10px 0;
 }
 
-#addUserForm {
+#addUserForm{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -137,7 +137,7 @@ input[type="text"][readonly] {
     min-width: 500px;
 }
 
-#currentUsers {
+#currentUsers, #notes{
     display: flex;
     flex-direction: column;
     padding-left: 15px;
@@ -151,4 +151,28 @@ input[type="text"][readonly] {
 
 .sectionHeader.first {
     margin-bottom: 20px;
+}
+
+
+/*  Add Cards Page */
+#addCardForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+#editCardSection {
+    min-width: 600px;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+#notes {
+
+}
+
+h4 {
+    text-align: center;
+    text-decoration: blue underline;
 }
