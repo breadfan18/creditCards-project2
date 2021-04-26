@@ -28,7 +28,7 @@ class LoginPage extends Page {
         return $('#issuer')
     }
     get issuerOptions() {
-        return $(`#issuer option:nth-child(${Math.floor(Math.random() * (7 - 1) + 1)})`)
+        return $(`#issuer option:nth-child(${Math.floor(Math.random() * (8 - 1) + 1)})`)
     }
     get cardName() {
         return $('#cardName')
