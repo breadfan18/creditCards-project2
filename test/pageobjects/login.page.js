@@ -1,4 +1,7 @@
 const Page = require('./page');
+const Chance = require('chance');
+const chance = new Chance();
+let my_random_string = chance.string();
 /**
  * sub page containing specific selectors and methods for a specific page
  */
@@ -22,13 +25,13 @@ class LoginPage extends Page {
         return $('#cardHolder')
     }
     get cardHolderOptions() {
-        return $(`#cardHolder option:nth-child(${Math.floor(Math.random() * (7 - 1) + 1)})`)
+        return $(`#cardHolder option:nth-child(${chance.integer({min: 1, max: 7})})`)
     }
     get issuer() {
         return $('#issuer')
     }
     get issuerOptions() {
-        return $(`#issuer option:nth-child(${Math.floor(Math.random() * (8 - 1) + 1)})`)
+        return $(`#issuer option:nth-child(${chance.integer({min: 1, max: 7})})`)
     }
     get cardName() {
         return $('#cardName')
@@ -72,15 +75,15 @@ class LoginPage extends Page {
         await (await this.cardHolderOptions).click();
         await (await this.issuer).click();
         await (await this.issuerOptions).click();
-        await (await this.cardName).setValue('Cashback');
-        await (await this.appDate).setValue('09/30/2019');
+        await (await this.cardName).setValue('Travel Card');
+        await (await this.appDate).setValue(chance.date({string: true}));
         await (await this.experian).click();
         await (await this.equifax).click();
-        await (await this.nextFeeDate).setValue('09/30/2020');
-        await (await this.creditLine).setValue('12,000');
-        await (await this.bonusSpend).setValue('4,000');
-        await (await this.bonusSpendDate).setValue('09/07/2020');
-        await (await this.annualFee).setValue('0');
+        await (await this.nextFeeDate).setValue(chance.date({string: true}));
+        await (await this.creditLine).setValue(chance.integer({min: 10000, max: 30000}));
+        await (await this.bonusSpend).setValue(chance.integer({min: 2000, max: 5000}));
+        await (await this.bonusSpendDate).setValue(chance.date({string: true}));
+        await (await this.annualFee).setValue(chance.integer({min: 0, max: 500}));
         await (await this.btnSubmit).click();
     }
     /**
