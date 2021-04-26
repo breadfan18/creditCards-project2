@@ -11,7 +11,7 @@
             <% let usersCards = cards.filter(card => card.applicant.equals(user._id)); %>
             <% console.log(usersCards); %>
             <a class="nav-item nav-link" id="nav-<%= user.firstName %>-tab" data-toggle="tab" href="#nav-<%= user.firstName %>" role="tab"
-                aria-controls="nav-profile" aria-selected="false"><%= user.firstName %> </a>
+                aria-controls="nav-profile" aria-selected="false"><%= user.firstName %> <%= user.lastName %></a>
             <% }) %>
         </div>
     </nav>

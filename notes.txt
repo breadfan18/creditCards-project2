@@ -1,7 +1,7 @@
 Challenges: 
 - When submitting new card, Could not find user _id since it was not part of req.params
 - Solved this by the following code in cards controller
-- Used Mode.findOne() to find the user by querying the firstName and lastName 
+- Used Model.findOne() to find the user by querying the firstName and lastName 
 
 function create(req, res) {
     let nameSplitArr = req.body.applicant.split(' ');
@@ -36,3 +36,7 @@ function create(req, res) {
 - the button to submit, you have to explicitly change its type to..lets say button
     <button type="button" id="editCardButton">Edit Card</button>
     <button type="submit" value="Submit" id="updateButton">Submit</button>
+
+
+- Adding card data was a challenge, and was taking too long. 
+- Solution, created a script using webdriverIO that will run through the addCard flow in abt 5 secs.

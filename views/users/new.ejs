@@ -1,70 +1,79 @@
 <%- include('../partials/header') %>
 
-<h3>ADD USER</h3>
-<form action="/users/new" method="POST">
-    <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input type="text" class="form-control" id="firstName" name="firstName">
-    </div>
-    <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input type="text" class="form-control" id="lastName" name="lastName">
-    </div>
-    <div class="form-group">
-        <label for="state">State</label>
-        <select class="form-control" id="states" name="state">
-            <option value="" disabled selected>Choose State</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="city">City</label>
-        <select class="form-control" id="cities" name="city">
-            <option value="" disabled selected>Choose City</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="dob">Birth Date</label>
-        <input type="date" class="form-control" id="dob" name="dob">
-    </div>
+<main id="usersPage">
+    <section id="addUserForm">
+        <div class="sectionHeader first">
+            <h3>Add User</h3>
+            <p>Add a user to manage</p>
+        </div>
+        <form action="/users/new" method="POST">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" id="firstName" name="firstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" id="lastName" name="lastName">
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select class="form-control" id="states" name="state">
+                    <option value="" disabled selected>Choose State</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City</label>
+                <select class="form-control" id="cities" name="city">
+                    <option value="" disabled selected>Choose City</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dob">Birth Date</label>
+                <input type="date" class="form-control" id="dob" name="dob">
+            </div>
 
-    <button type="submit" class="btn btn-primary">Add User</button>
-</form>
-
-<section id="currentUsers">
-    <h3>Registered Users</h3>
-    <p>Users that have active cards registered to their name cannot be deleted.</p>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">City</th>
-                    <th scope="col">State</th>
-                    <th scope="col">Birth Date</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <% users.forEach((user, idx) => { %>
-                <tr>
-                    <th scope="row"><%= idx+1 %> </th>
-                    <td><%= user.firstName %> </td>
-                    <td><%= user.lastName %> </td>
-                    <td><%= user.city %> </td>
-                    <td><%= user.state %> </td>
-                    <td><%= user.dob.toLocaleDateString() %> </td>
-                    <td>
-                        <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
-                            <button type="submit" class="btn btn-sm btn-danger" <% cards.forEach(card => { %><%= user._id.equals(card.applicant) ? 'disabled' : null %><% }); %>>Delete</button>
-                        </form>
-                    </td>
-                </tr>
-                <% }); %>
-            </tbody>
-        </table>
-    </div>
-</section>
+            <button type="submit" class="btn btn-primary">Add User</button>
+        </form>
+    </section>
+    <section id="currentUsers">
+        <div class="sectionHeader">
+            <h3>Registered Users</h3>
+            <p>Users that have active cards registered to their name cannot be deleted.</p>
+        </div>
+        <div class="table">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">City</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Birth Date</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach((user, idx) => { %>
+                    <tr>
+                        <th scope="row"><%= idx+1 %> </th>
+                        <td><%= user.firstName %> </td>
+                        <td><%= user.lastName %> </td>
+                        <td><%= user.city %> </td>
+                        <td><%= user.state %> </td>
+                        <td><%= user.dob.toLocaleDateString() %> </td>
+                        <td>
+                            <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-sm btn-danger"
+                                    <% cards.forEach(card => { %><%= user._id.equals(card.applicant) ? 'disabled' : null %><% }); %>>Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
 
 <%- include('../partials/footer') %>
