@@ -84,7 +84,7 @@ label {
 #cardDetails {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 1rem;
+    grid-gap: 0.8rem;
     max-width: 500px;
     margin: 0 auto;
 }
@@ -174,14 +174,6 @@ input[type="text"][readonly] {
     margin-bottom: 20px;
 }
 
-
-/*  Add Cards Page */
-#addCardForm {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-}
-
 #editCardSection {
     min-width: 600px;
     border: 5px solid var(--lightColor);
@@ -210,4 +202,29 @@ textarea {
     flex-grow: 2;
     margin-right: 2px;
     background-color: var(--superlightColor);
+}
+
+
+/*  Add Cards Page */
+
+#addCardForm {
+    max-width: 800px;
+    margin: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    grid-auto-flow: column;
+}
+
+#addCardPage {
+    margin-top: 10px;
+}
+.bi {
+    color: var(--mainColor);
+    font-size: 1.5rem;
+}
+
+i {
+    margin-right: 20px;
 }

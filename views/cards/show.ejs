@@ -11,7 +11,7 @@
         <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
             <% let currentCardHolder = users.find(user => user._id.equals(card.applicant)); %>
             <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
-            <label><i class="bi bi-file-person-fill"></i>Card Holder: </label>
+            <label><i class="bi bi-file-person"></i>Card Holder: </label>
             <input type="text" name="applicantOld" id="applicantOld" readonly value="<%= fullName %> "></input>
             <select id="cardHolderChange" name="applicant">
                 <option value="<%= fullName %>" selected><%= fullName %> </option>
@@ -20,26 +20,26 @@
                 </option>
                 <% }); %>
             </select>
-            <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
+            <label><i class="bi bi-calendar-date"></i>Application Date:</label>
             <input class="dateField" type="text" name="appDate" readonly
                 value="<%= card.appDate.toLocaleDateString() %> "></input>
-            <label><i class="bi bi-file-person-fill"></i>Credit Pull:</label>
+            <label><i class="bi bi-shield-lock"></i>Credit Pull:</label>
             <div>
                 <% card.creditPull.forEach((pull, idx) => { %>
                 <% let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
                 <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
                 <% }) %>
             </div>
-            <label><i class="bi bi-file-person-fill"></i>Credit Line: </label>
+            <label><i class="bi bi-cash-stack"></i>Credit Line: </label>
             <input type="text" name="creditLine" readonly value="<%= card.creditLine %>"></input>
-            <label><i class="bi bi-file-person-fill"></i>Bonus Spend: </label>
+            <label><i class="bi bi-cash"></i>Bonus Spend: </label>
             <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
-            <label><i class="bi bi-file-person-fill"></i>Bonus Spend Date: </label>
+            <label><i class="bi bi-calendar-date"></i>Bonus Spend Date: </label>
             <input class="dateField" type="text" name="bonusSpendDate" readonly
                 value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
-            <label><i class="bi bi-file-person-fill"></i>Annual Fee: </label>
+            <label><i class="bi bi-wallet2"></i>Annual Fee: </label>
             <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
-            <label><i class="bi bi-file-person-fill"></i>Account Status: </label>
+            <label><i class="bi bi-eye"></i>Account Status: </label>
             <input name="accountStatusOld" id="accountStatus" type="text" readonly
                 value="<%= card.accountStatus %>"></input>
             <select name="accountStatus" id="accountStatusChange">

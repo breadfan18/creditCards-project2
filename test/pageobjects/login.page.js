@@ -75,7 +75,7 @@ class LoginPage extends Page {
         await (await this.cardHolderOptions).click();
         await (await this.issuer).click();
         await (await this.issuerOptions).click();
-        await (await this.cardName).setValue(chance.word({length: chance.integer({min: 4, max:10})}));
+        await (await this.cardName).setValue(chance.animal());
         await (await this.appDate).setValue(chance.date({string: true}));
         await (await this.experian).click();
         await (await this.equifax).click();
