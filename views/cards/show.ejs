@@ -4,8 +4,8 @@
 <main id="editCardsPage">
     <section id="editCardSection">
         <div class="sectionHeader first">
-            <h3>Edit Card</h3>
-            <p>Change any card details and click Submit</p>
+            <h3>Card Details</h3>
+            <p>Click 'Edit Card' to edit card details</p>
         </div>
         <h4><%= card.issuer %> <%= card.cardName %> </h4>
         <form action="/cards/<%= card._id %>?_method=PUT" id="cardDetails" method="POST">
@@ -13,7 +13,6 @@
             <% let fullName = `${currentCardHolder.firstName} ${currentCardHolder.lastName}`; %>
             <label><i class="bi bi-file-person-fill"></i>Card Holder: </label>
             <input type="text" name="applicantOld" id="applicantOld" readonly value="<%= fullName %> "></input>
-
             <select id="cardHolderChange" name="applicant">
                 <option value="<%= fullName %>" selected><%= fullName %> </option>
                 <% users.forEach(user => { %>
@@ -21,12 +20,9 @@
                 </option>
                 <% }); %>
             </select>
-
-
             <label><i class="bi bi-calendar-date-fill"></i>Application Date:</label>
             <input class="dateField" type="text" name="appDate" readonly
                 value="<%= card.appDate.toLocaleDateString() %> "></input>
-
             <label><i class="bi bi-file-person-fill"></i>Credit Pull:</label>
             <div>
                 <% card.creditPull.forEach((pull, idx) => { %>
@@ -34,20 +30,15 @@
                 <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
                 <% }) %>
             </div>
-
             <label><i class="bi bi-file-person-fill"></i>Credit Line: </label>
             <input type="text" name="creditLine" readonly value="<%= card.creditLine %>"></input>
-
             <label><i class="bi bi-file-person-fill"></i>Bonus Spend: </label>
             <input type="text" name="bonusSpend" readonly value="<%= card.bonusSpend %>"></input>
-
             <label><i class="bi bi-file-person-fill"></i>Bonus Spend Date: </label>
             <input class="dateField" type="text" name="bonusSpendDate" readonly
                 value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
-
             <label><i class="bi bi-file-person-fill"></i>Annual Fee: </label>
             <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
-
             <label><i class="bi bi-file-person-fill"></i>Account Status: </label>
             <input name="accountStatusOld" id="accountStatus" type="text" readonly
                 value="<%= card.accountStatus %>"></input>
@@ -56,9 +47,8 @@
                 <option value="Closed">Closed</option>
                 <option value="Downgraded">Downgraded</option>
             </select>
-
             <button class="btn btn-primary" type="button" id="editCardButton">Edit Card</button>
-            <button class="btn btn-primary" type="submit" value="Submit" id="updateButton" disabled>Submit</button>
+            <button class="btn btn-success" type="submit" value="Submit" id="updateButton" disabled>Submit</button>
         </form>
     </section>
     <section id="notes">
@@ -66,14 +56,14 @@
             <h3>Card Notes</h3>
             <p>Please add any notes relevent to this card</p>
         </div>
-        <div class="addNote">
-            <h4>Add a note: </h4>
+        <h4>Add a note: </h4>
+        <div>
             <form id="add-note-form" action="/cards/<%= card._id %>/notes" method="POST">
                 <textarea name="note"></textarea>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>
         </div>
-        <h3>All Notes</h3>
+        <h5>All Notes</h5>
         <table class="table table-striped">
             <thead>
                 <tr>
