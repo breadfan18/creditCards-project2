@@ -45,7 +45,6 @@ $(document).on('DOMContentLoaded', () => {
     });
 })
 
-
 let readonly = true;
 $('#editCardButton').on('click', function () {
     if ($(this).html() === 'Edit Card') {
@@ -89,3 +88,12 @@ $(document).ready(function () {
         }
     })
 })
+
+
+$('li.nav-item').on('click', 'li', function (e) {
+    console.log(e.target.innerHtml);
+    console.log('test');
+});
+
+
+

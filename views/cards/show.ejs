@@ -27,7 +27,7 @@
             <div>
                 <% card.creditPull.forEach((pull, idx) => { %>
                 <% let creditBureaus = ['Experian', 'Equifax', 'Transunion']%>
-                <div><%= pull === null ? '' : creditBureaus[idx]; %> </div>
+                <div id="creditPullDisplay"><%= pull === null ? '' : creditBureaus[idx]; %> </div>
                 <% }) %>
             </div>
             <label><i class="bi bi-cash-stack"></i>Credit Line: </label>

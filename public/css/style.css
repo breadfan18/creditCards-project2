@@ -205,6 +205,10 @@ textarea {
     background-color: var(--superlightColor);
 }
 
+textarea:focus {
+    background-color: white;
+}
+
 
 /*  Add Cards Page */
 
@@ -234,3 +238,8 @@ i {
     cursor: pointer;
     /* background-color: var(--superlightColor); */
 }
+
+#creditPullDisplay {
+    margin-left: 5px;
+}
+
