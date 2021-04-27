@@ -4,7 +4,7 @@
     --mainColor: rgba(88,57,133);
     --lightColor: rgba(88,57,133, 0.7);
     --lighterColor: rgba(88,57,133, 0.5);
-    --superlightColor: rgba(88,57,133, 0.1);
+    --superlightColor: rgba(88,57,133, 0.3);
 }
 
 
@@ -121,7 +121,8 @@ input[type="text"][readonly] {
 .nav-item.nav-link {
     border: 1px solid var(--superlightColor);
     border-bottom: none;
-    /* color: rgba(88,57,133); */
+    color: var(--mainColor);
+    font-weight: bold;
 }
 
 .nav-tabs {
