@@ -10,4 +10,10 @@ router.get('/oauth2callback', passport.authenticate('google', {
     failureRedirect: '/'
 }));
 
+//logout route
+router.get('/logout', function (req, res) {
+    req.logOut();
+    res.redirect('/');
+})
+
 module.exports = router;
