@@ -2,7 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-const PORT = 3002;
+const PORT = process.env.PORT || '3002';
 
 const indexRouter = require('./routes/index');
 const cardsRouter = require('./routes/cards');
