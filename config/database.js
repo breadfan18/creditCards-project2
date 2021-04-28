@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb+srv://admin:abc1234@cluster0.hbi4v.mongodb.net/project2-cc-tracker?retryWrites=true&w=majority';
+const connectionString = process.env.DATABASE_URI;
 
 mongoose.connect(connectionString, {
     useNewUrlParser: true,

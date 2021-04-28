@@ -19,14 +19,17 @@ Heroku:
 - MongoDB
 - Node.JS
 - Express.JS
+- Passport.JS
 
 
 ## Other NPM Packages Used
 - Mongoose
+- Express-Session (For storing session cookie)
 - EJS
 - Bootstrap Icons
 - Method-Override
 - Morgan
+- DotEnv (for setting the environment variables in the .env file)
 - WebdriverIO (package that helps run automated tests)
 - Chance (package that helps create random data)
 
