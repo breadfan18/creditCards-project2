@@ -21,10 +21,12 @@ Netlify:
 - MongoDB
 - Node.JS
 - Express.JS
+- Passport.JS
 
 
 ## Other NPM Packages Used
 - Mongoose
+- Express-Session (For storing session cookie)
 - EJS
 - Bootstrap Icons
 - Method-Override
