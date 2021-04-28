@@ -15,6 +15,9 @@ const notesRouter = require('./routes/notes');
 // initialize the express app
 const app = express();
 
+// Load the .env variables
+require('dotenv').config();
+
 // connect to the DB and the passport config file
 require('./config/database');
 require('./config/passport');
