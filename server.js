@@ -15,8 +15,9 @@ const notesRouter = require('./routes/notes');
 // initialize the express app
 const app = express();
 
-// connect to the DB
+// connect to the DB and the passport config file
 require('./config/database');
+require('./config/passport');
 
 // Configure the view engine
 app.set('view engine', 'ejs');
