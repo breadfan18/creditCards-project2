@@ -5,8 +5,6 @@
 Heroku:
 - https://swaroop-cc-tracker.herokuapp.com/users/new
 
-Netlify:
-- https://movie-project1-swaroop.netlify.app/
 
 ## Technologies Used
 - HTML5
