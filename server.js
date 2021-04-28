@@ -2,6 +2,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
+const session = require('express-session');
 const PORT = 3002;
 
 const indexRouter = require('./routes/index');
@@ -24,6 +25,11 @@ app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(methodOverride('_method'));
+app.use(session({
+    secret: 'swaroopCC',
+    resave: false,
+    saveUninitialized: true
+}))
 
 // Mount the routers 
 app.use('/', indexRouter);
