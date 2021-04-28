@@ -76,7 +76,6 @@ function deleteCard(req, res) {
 
 
 function update(req, res) {
-    console.log(req.body);
     let nameSplitArr = req.body.applicant.split(' ');
 
     let userObj = {
