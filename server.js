@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const passport = require('passport');
 const PORT = 3002;
 
 const indexRouter = require('./routes/index');
@@ -29,7 +30,9 @@ app.use(session({
     secret: 'swaroopCC',
     resave: false,
     saveUninitialized: true
-}))
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Mount the routers 
 app.use('/', indexRouter);
