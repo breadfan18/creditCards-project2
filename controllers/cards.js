@@ -27,7 +27,8 @@ function index(req, res) {
 function newCard(req, res) {
     User.find({}, function (err, users) {
         res.render('cards/new', {
-            users
+            users,
+            admin: req.user
         });
     })
 }
@@ -63,7 +64,8 @@ function show(req, res) {
         User.find({}, function (err, users) {
             res.render('cards/show', {
                 card,
-                users
+                users,
+                admin: req.user
             })
         })
     })

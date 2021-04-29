@@ -15,6 +15,7 @@ function addNewUser(req, res) {
             res.render('users/new', {
                 users,
                 cards,
+                admin: req.user
             });
         })
     })

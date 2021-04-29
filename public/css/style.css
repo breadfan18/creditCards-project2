@@ -41,6 +41,7 @@ footer>p {
     align-items: center;
     justify-content: flex-end;
     background-color: var(--mainColor);
+    /* opacity: 50%; */
     color: white;
 }
 
@@ -73,9 +74,8 @@ footer>p {
 
 #carousel {
     min-height: 20vh;
-    /* border: 10px solid white; */
     border-bottom: none;
-    background-color: gray;
+    /* background-color: gray; */
 }
 
 #headerImg {
