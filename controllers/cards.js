@@ -19,7 +19,6 @@ function index(req, res) {
                 cards, 
                 users,
                 admin: req.user
-                
             })
         })
     })
