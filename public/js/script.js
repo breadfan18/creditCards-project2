@@ -93,3 +93,41 @@ $(document).ready(function () {
 
 
 
+// function to set a given theme/color-scheme
+function setTheme(themeName) {
+    localStorage.setItem('theme', themeName);
+    document.documentElement.className = themeName;
+}
+// function to toggle between light and dark theme
+function toggleTheme() {
+   if (localStorage.getItem('theme') === 'theme-dark'){
+       setTheme('theme-light'); 
+       $('table').removeClass('table-dark');
+       $('table').addClass('table-hover');
+       $('table').addClass('table-striped');
+   } else {
+       setTheme('theme-dark');
+       $('table').addClass('table-dark');
+       $('table').removeClass('table-hover');
+       $('table').removeClass('table-striped');
+       $('table').removeClass('dataTable');
+
+   }
+}
+// Immediately invoked function to set the theme on initial load
+(function () {
+   if (localStorage.getItem('theme') === 'theme-dark') {
+       setTheme('theme-dark');
+       $('table').addClass('table-dark')
+       $('table').removeClass('table-hover');
+       $('table').removeClass('table-striped');
+       $('table').removeClass('dataTable');
+   } else {
+       setTheme('theme-light');
+       $('table').removeClass('table-dark')
+       $('table').addClass('table-hover');
+       $('table').addClass('table-striped');
+       
+
+   }
+})();
