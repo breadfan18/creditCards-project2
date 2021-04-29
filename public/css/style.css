@@ -5,6 +5,9 @@
     --lightColor: rgba(88,57,133, 0.7);
     --lighterColor: rgba(88,57,133, 0.5);
     --superlightColor: rgba(88,57,133, 0.3);
+    --bodyColor: white;
+    --inputReadOnlyBorder: rgba(0, 0, 0, 0);
+    --inputReadOnlyBkgrdColor: white;
 }
 
 .theme-dark {
@@ -12,6 +15,9 @@
     --lightColor: rgba(12,24,47, 0.7);
     --lighterColor: rgba(12,24,47, 0.5);
     --superlightColor: rgba(12,24,47, 0.3);
+    --bodyColor: gray;
+    --inputReadOnlyBorder: gray;
+    --inputReadOnlyBkgrdColor: gray;
 }
 
 /* Global */
@@ -21,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--bodyColor);
 }
 
 main {
@@ -154,7 +161,11 @@ label {
 }
 
 input[type="text"][readonly] {
-    border: 2px solid rgba(0, 0, 0, 0);
+    border: 2px solid var(--inputReadOnlyBorder);
+}
+
+input[type="text"]{
+    background-color: var(--inputReadOnlyBkgrdColor);
 }
 
 .table-responsive {

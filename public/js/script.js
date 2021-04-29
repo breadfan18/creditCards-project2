@@ -111,7 +111,7 @@ function toggleTheme() {
        $('table').removeClass('table-hover');
        $('table').removeClass('table-striped');
        $('table').removeClass('dataTable');
-
+       $('input[type="text"]').css('backgroundColor', 'white')
    }
 }
 // Immediately invoked function to set the theme on initial load
@@ -122,12 +122,11 @@ function toggleTheme() {
        $('table').removeClass('table-hover');
        $('table').removeClass('table-striped');
        $('table').removeClass('dataTable');
-   } else {
-       setTheme('theme-light');
-       $('table').removeClass('table-dark')
-       $('table').addClass('table-hover');
-       $('table').addClass('table-striped');
-       
-
+       $('input[type="text"]').css('backgroundColor', 'white')
+    } else {
+        setTheme('theme-light');
+        $('table').removeClass('table-dark')
+        $('table').addClass('table-hover');
+        $('table').addClass('table-striped');
    }
 })();
