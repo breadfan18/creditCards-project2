@@ -40,3 +40,16 @@ function create(req, res) {
 
 - Adding card data was a challenge, and was taking too long. 
 - Solution, created a script using webdriverIO that will run through the addCard flow in abt 5 secs.
+
+
+
+- BUG: Users with active cards were showing delete button active. This caused problems if we deleted users that had active cards. Implemented code below to disable
+- But some were getting disabled, others were not
+<td>
+    <form action="/users/<%= user._id %>?_method=DELETE" method="POST">
+        <button id="delUserButton" type="submit" class="btn btn-sm btn-danger"
+            <% cards.forEach(card => { %><%= user._id.equals(card.applicant) ? 'disabled ' : null %><% }); %>>Delete</button>
+    </form>
+</td>
+- Reason for the bug, users with multiple cards were getting disableddisableddisabled etc added 
+- I added a single space character after disabled, and that fixed the problem
