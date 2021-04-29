@@ -11,12 +11,15 @@ module.exports = {
 }
 
 function index(req, res) {
+    console.log(req.user);
     Card.find({}, function (err, cards) {
         User.find({}, function (err, users) {
             res.render('cards/index', {
                 title: 'All Cards',
                 cards, 
-                users
+                users,
+                admin: req.user
+                
             })
         })
     })
