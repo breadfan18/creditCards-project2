@@ -36,6 +36,41 @@ footer>p {
     margin: 0;
 }
 
+#userNav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--mainColor);
+    color: white;
+}
+
+#userNav *{
+    margin: 3px;
+    font-size: 15px;
+    color: white;
+}
+
+#loggedUserIcon {
+    color: white;
+}
+
+#loggedUserSelect {
+    color: var(--mainColor);
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 #carousel {
     min-height: 20vh;
     /* border: 10px solid white; */
