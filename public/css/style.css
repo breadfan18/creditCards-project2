@@ -75,6 +75,10 @@ footer>p {
     color: white;
 }
 
+#navbarNav{
+    margin-left: 0;
+}
+
 label {
     font-weight: bold;
     text-decoration: blue underline;
@@ -141,7 +145,6 @@ input[type="text"][readonly] {
     color: white;
     border: none;
 }
-
 
 
 /* Add Users Page */
@@ -232,6 +235,7 @@ textarea:focus {
 #addCardPage {
     margin-top: 10px;
 }
+
 .bi {
     color: var(--mainColor);
     font-size: 1.5rem;
