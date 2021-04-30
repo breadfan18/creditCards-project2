@@ -122,6 +122,5 @@ function toggleTheme() {
         setTheme('theme-light');
         $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped')
         $('#switch').html('Switch to Dark Mode');
-
    }
 })();
