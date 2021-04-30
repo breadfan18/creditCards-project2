@@ -105,13 +105,15 @@ function toggleTheme() {
        $('table').removeClass('table-dark');
        $('table').addClass('table-hover');
        $('table').addClass('table-striped');
+       $('#switch').html('Switch to Dark Mode');
    } else {
        setTheme('theme-dark');
        $('table').addClass('table-dark');
        $('table').removeClass('table-hover');
        $('table').removeClass('table-striped');
        $('table').removeClass('dataTable');
-       $('input[type="text"]').css('backgroundColor', 'white')
+       $('input[type="text"]').css('backgroundColor', 'white');
+       $('#switch').html('Switch to Light Mode');
    }
 }
 // Immediately invoked function to set the theme on initial load
@@ -122,11 +124,14 @@ function toggleTheme() {
        $('table').removeClass('table-hover');
        $('table').removeClass('table-striped');
        $('table').removeClass('dataTable');
-       $('input[type="text"]').css('backgroundColor', 'white')
+       $('input[type="text"]').css('backgroundColor', 'white');
+       $('#switch').html('Switch Light Mode');
     } else {
         setTheme('theme-light');
         $('table').removeClass('table-dark')
         $('table').addClass('table-hover');
         $('table').addClass('table-striped');
+        $('#switch').html('Switch to Dark Mode');
+
    }
 })();

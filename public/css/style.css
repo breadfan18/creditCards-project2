@@ -65,6 +65,13 @@ footer>p {
     color: white;
 }
 
+#switch{
+    margin-right: auto;
+    background-color: var(--mainColor);
+    border-color: white;
+    border-radius: 10px;
+}
+
 #loggedUserIcon {
     color: white;
 }
@@ -130,8 +137,7 @@ footer>p {
 
 label {
     font-weight: bold;
-    text-decoration: blue underline;
-    /* border-bottom: 2px solid blue; */
+    /* text-decoration: blue underline; */
 }
 
 .form-check-label {
@@ -140,7 +146,6 @@ label {
 
 
 /* Edit Card Page */
-
 #cardDetails {
     display: grid;
     grid-template-columns: auto auto;
@@ -275,18 +280,23 @@ textarea:focus {
 
 /*  Add Cards Page */
 
-/* #addCardForm {
+#addCardForm {
     max-width: 800px;
     margin: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 1rem;
-    grid-auto-flow: column;
-} */
+    grid-template-rows: auto auto;
+    grid-gap: 1.5rem;
+}
+
+#addCardForm * {
+    width: 400px;
+}
 
 #addCardPage {
-    margin-top: 10px;
+    max-width: 1000px;
+    margin: 10px auto;
+    border: 5px solid var(--lightColor);
 }
 
 .bi {
