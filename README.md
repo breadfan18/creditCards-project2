@@ -53,4 +53,12 @@ These were the wireframes I created before starting to write any code for this p
 
 ![erd](https://i.imgur.com/GR1ENea.png)
 
+## App Screenshots
+
+### Login Form
+![loginForm](https://i.imgur.com/EbhTlcj.png)
+
+### Cards Index Page
+![loginForm](https://i.imgur.com/EbhTlcj.png)
+
 
