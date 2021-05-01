@@ -117,7 +117,7 @@ function toggleTheme() {
        setTheme('theme-dark');
        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
        $('input[type="text"]').css('backgroundColor', 'white');
-       $('#switch').html('Switch Light Mode');
+       $('#switch').html('Switch to Light Mode');
     } else {
         setTheme('theme-light');
         $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped')

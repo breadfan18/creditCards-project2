@@ -20,94 +20,6 @@
     --inputReadOnlyBkgrdColor: gray;
 }
 
-
-/* Login Form */
-#loginMain {
-    background-color: var(--superlightColor);
-    display: flex;
-    align-items: center;
-    justify-content: center;
- 
-}
-
-#loginForm {
-    background-color: rgba(255,255,255,0.3);
-    padding: 60px;
-    border-radius: 30px;
-}
-
-#loginForm h1 {
-    color: var(--mainColor);
-    border-bottom: 2px solid var(--superlightColor);
-}
-
-#socialLogin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#socialLogin * {
-    width: 20rem;
-    margin-bottom: 5px;
-}
-
-/* #googleLogin, #facebookLogin {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-} */
-
-#googleLogin button{
-    display: flex;
-    align-items: center;
-    background-color: rgba(52,168,83);
-    text-align: center;
-    border: none;
-    border-radius: 5px;
-}
-
-#facebookLogin button{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(24,119,242);
-    border: none;
-    border-radius: 5px;
-}
-
-#googleIcon {
-    color: white;
-}
-
-#fbIcon {
-    color: white;
-}
-
-
-#googleLogin button a, #facebookLogin button a{
-    text-decoration: none;
-    color: white;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Global */
 body {
     box-sizing: border-box;
@@ -168,6 +80,116 @@ footer>p {
     color: var(--mainColor);
     border: none;
 }
+
+
+/* Login Form */
+#loginMain {
+    background-color: var(--superlightColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loginForm {
+    background-color: rgba(255,255,255,0.3);
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+#loginForm h1 {
+    color: var(--mainColor);
+    border-bottom: 2px solid var(--superlightColor);
+}
+
+#socialLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#socialLogin * {
+    width: 20rem;
+    margin-bottom: 5px;
+}
+
+#googleLogin button{
+    display: flex;
+    align-items: center;
+    background-color: rgba(234,67,53);
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+#facebookLogin button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(60,88,156);
+    border: none;
+    border-radius: 5px;
+}
+
+#linkedIn button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(10,102,194);
+    border: none;
+    border-radius: 5px;
+}
+
+#googleIcon, #fbIcon, #linkedInIcon {
+    color: white;
+    margin-right: 10px;
+}
+
+#googleLogin button a, #facebookLogin button a, #linkedIn button a{
+    text-decoration: none;
+    color: white;
+}
+
+#loginOr {
+    text-align: center;
+    color: var(--mainColor);
+}
+
+#userAndPwdForm {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: auto auto;
+    grid-gap: 0.5em;
+    width: 20rem;
+}
+
+.userAndPwdInput{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.loginLabels {
+    margin: 0;
+    padding: 0;
+}
+
+#loginSubmit {
+    width: 20rem;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

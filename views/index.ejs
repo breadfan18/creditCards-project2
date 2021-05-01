@@ -5,29 +5,27 @@
         <h1>Credit Card Tracker</h1>
         <div id="socialLogin">
             <div id="googleLogin"> <% if(user) { %>
-                <button><a href="/cards"><i id="googleIcon" class="bi bi-google"></i>Google Session Active. Go to App</a></button>
+                <button><a href="/cards"><i id="googleIcon" class="bi bi-google"></i>Google Session Active. Go to
+                        App</a></button>
                 <% } else { %>
-                <button><a href="/auth/google"><i  id="googleIcon" class="bi bi-google"></i>Google Login</a></button>
+                <button><a href="/auth/google"><i id="googleIcon" class="bi bi-google"></i>Google Login</a></button>
                 <% } %>
             </div>
-
             <div id="facebookLogin">
                 <button><a href="#"><i id="fbIcon" class="bi bi-facebook"></i>Facebook Login</a></button>
             </div>
+            <div id="linkedIn">
+                <button><a href="#"><i id="linkedInIcon" class="bi bi-linkedin"></i>LinkedIn Login</a></button>
+            </div>
         </div>
-
-        <h2>OR</h2>
-
+        <h2 id="loginOr">OR</h2>
         <form action="" id="userAndPwdForm">
-            <div id="username">
-                <label for=""><i class="bi bi-person-fill"></i>User Name</label>
-                <input type="text">
-            </div>
-            <div id="pwd">
-                <label for=""><i class="bi bi-eye"></i>Password</label>
-                <input type="text">
-            </div>
+            <i class="bi bi-person-fill loginLabels"></i>
+            <input class="userAndPwdInput" type="text" placeholder="Username">
+            <label for=""><i class="bi bi-eye loginLabels"></i></label>
+            <input class="userAndPwdInput" type="text" placeholder="Password">
         </form>
+        <button id="loginSubmit" class="btn btn-success">Log In</button>
     </section>
 </main>
 
