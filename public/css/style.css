@@ -20,6 +20,94 @@
     --inputReadOnlyBkgrdColor: gray;
 }
 
+
+/* Login Form */
+#loginMain {
+    background-color: var(--superlightColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
+#loginForm {
+    background-color: rgba(255,255,255,0.3);
+    padding: 60px;
+    border-radius: 30px;
+}
+
+#loginForm h1 {
+    color: var(--mainColor);
+    border-bottom: 2px solid var(--superlightColor);
+}
+
+#socialLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#socialLogin * {
+    width: 20rem;
+    margin-bottom: 5px;
+}
+
+/* #googleLogin, #facebookLogin {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+} */
+
+#googleLogin button{
+    display: flex;
+    align-items: center;
+    background-color: rgba(52,168,83);
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+}
+
+#facebookLogin button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(24,119,242);
+    border: none;
+    border-radius: 5px;
+}
+
+#googleIcon {
+    color: white;
+}
+
+#fbIcon {
+    color: white;
+}
+
+
+#googleLogin button a, #facebookLogin button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Global */
 body {
     box-sizing: border-box;

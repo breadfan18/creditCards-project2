@@ -1,12 +1,34 @@
 <%- include('./partials/header') %>
 
-<main>
-    <h1>Credit Card Tracker App</h1>
-    <% if(user) { %>
-    <a href="/cards">Go to App</a>
-    <% } else { %>
-    <a href="/auth/google">Login With Google</a>
-    <% } %>
+<main id="loginMain">
+    <section id="loginForm">
+        <h1>Credit Card Tracker</h1>
+        <div id="socialLogin">
+            <div id="googleLogin"> <% if(user) { %>
+                <button><a href="/cards"><i id="googleIcon" class="bi bi-google"></i>Google Session Active. Go to App</a></button>
+                <% } else { %>
+                <button><a href="/auth/google"><i  id="googleIcon" class="bi bi-google"></i>Google Login</a></button>
+                <% } %>
+            </div>
+
+            <div id="facebookLogin">
+                <button><a href="#"><i id="fbIcon" class="bi bi-facebook"></i>Facebook Login</a></button>
+            </div>
+        </div>
+
+        <h2>OR</h2>
+
+        <form action="" id="userAndPwdForm">
+            <div id="username">
+                <label for=""><i class="bi bi-person-fill"></i>User Name</label>
+                <input type="text">
+            </div>
+            <div id="pwd">
+                <label for=""><i class="bi bi-eye"></i>Password</label>
+                <input type="text">
+            </div>
+        </form>
+    </section>
 </main>
 
 <%- include('./partials/footer') %>
