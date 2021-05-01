@@ -100,27 +100,50 @@ function setTheme(themeName) {
 }
 // function to toggle between light and dark theme
 function toggleTheme() {
-   if (localStorage.getItem('theme') === 'theme-dark'){
-       setTheme('theme-light'); 
-       $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped');
-       $('#switch').html('Switch to Dark Mode');
-   } else {
-       setTheme('theme-dark');
-       $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable');
-       $('input[type="text"]').css('backgroundColor', 'white');
-       $('#switch').html('Switch to Light Mode');
-   }
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-light');
+        $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped');
+        $('#switch').html('Switch to Dark Mode');
+    } else {
+        setTheme('theme-dark');
+        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable');
+        $('input[type="text"]').css('backgroundColor', 'white');
+        $('#switch').html('Switch to Light Mode');
+    }
 }
 // Immediately invoked function to set the theme on initial load
 (function () {
-   if (localStorage.getItem('theme') === 'theme-dark') {
-       setTheme('theme-dark');
-       $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
-       $('input[type="text"]').css('backgroundColor', 'white');
-       $('#switch').html('Switch to Light Mode');
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
+        $('input[type="text"]').css('backgroundColor', 'white');
+        $('#switch').html('Switch to Light Mode');
     } else {
         setTheme('theme-light');
         $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped')
         $('#switch').html('Switch to Dark Mode');
-   }
+    }
 })();
+
+
+// Images API
+let img_uri = 'https://picsum.photos/1500/250';
+let imgArray = [];
+
+function getData() {
+    for (let i = 0; i < 20; i++) {
+        $.ajax(img_uri)
+            .then(function (img) {
+                imgArray.push(img);
+            },
+            function error(img) {
+                console.log(img);
+            })
+    }
+
+    setTimeout(() => {
+        console.log(imgArray);
+    }, 1000);
+}
+
+getData();
