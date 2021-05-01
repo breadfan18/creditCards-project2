@@ -113,6 +113,7 @@ footer>p {
     margin-bottom: 5px;
 }
 
+
 #googleLogin button{
     display: flex;
     align-items: center;
@@ -186,29 +187,7 @@ footer>p {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* HEADER IMAGE AND CAROUSEL */
 #carousel {
     min-height: 20vh;
     border-bottom: none;
@@ -240,6 +219,7 @@ footer>p {
 
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-brand{
     color: white;
+    border-right: rgba(255,255,255,0.5)
 }
 
 .navbar-light .navbar-nav .nav-link:hover{
@@ -433,10 +413,10 @@ i {
 }
 
 #creditPullDisplay {
-
-    margin-left: 13px;
+    margin-left: 10px;
 }
 
 .table-danger, .table-warning{
     color: black;
 }
+

@@ -95,14 +95,12 @@ function update(req, res) {
         accountStatus: req.body.accountStatus,
         creditLine: req.body.creditLine,
         nextFeeDate: req.body.nextFeeDate
-
     }
 
     Card.findByIdAndUpdate(req.params.id, cardObj, function (err, card) {
         User.findByIdAndUpdate(card.applicant, userObj, function (err, user) {
             res.redirect('/cards');
         })
-        
     })
 }
 

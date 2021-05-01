@@ -136,9 +136,9 @@ function toggleClosedAndDowngradedThemes(theme) {
             } else if ($(this).text() === 'Downgraded') {
                 $(this).closest('tr').removeClass('table-warning').addClass('bg-warning');
             }
-        })  
+        })
 
-    }else if (theme === 'light'){
+    } else if (theme === 'light') {
         accountStatuses.each(function () {
             if ($(this).text() === 'Closed') {
                 $(this).closest('tr').addClass('table-danger').removeClass('bg-danger');
@@ -149,3 +149,33 @@ function toggleClosedAndDowngradedThemes(theme) {
     }
 }
 
+
+
+let images = $('.headerImg');
+let autoIndex = 0;
+let slideshowPlaying = false;
+let timeout;
+let currentSlide;
+
+autoSlideShow();
+
+function autoSlideShow() {
+    for (const image of images) {
+        image.style.display = 'none';
+    }
+    autoIndex++;
+
+    if (autoIndex > images.length) {
+        autoIndex = 1;
+    }
+    if (autoIndex < 1) {
+        autoIndex = images.length;
+    }
+    images[autoIndex - 1].style.display = "block";
+
+    timeout = setTimeout(autoSlideShow, 3000);
+    currentSlide = autoIndex;
+
+    slideshowPlaying = true;
+
+}
