@@ -20,6 +20,7 @@ Heroku:
 - Node.JS
 - Express.JS
 - Passport.JS
+- LocalStorage
 
 
 ## Other NPM Packages Used
