@@ -1,5 +1,5 @@
 // Images API
-let img_uri = 'https://api.spacexdata.com/v3/launches';
+let img_uri = 'https://picsum.photos/1500/200';
 let imgArray = [];
 let myImg;
 
@@ -11,7 +11,7 @@ function init() {
 }
 
 function getData() {
-    jQuery.ajax(img_uri)
+    $.ajax(img_uri)
         .then(function (data) {
             myImg = data;
             render();
@@ -22,4 +22,6 @@ function getData() {
 
 function render() {
     console.log(myImg);
+    $('.headerImg').attr('src', myImg);
+    // console.log(test);
 }
