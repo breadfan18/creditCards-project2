@@ -3,7 +3,7 @@
 
 ## Live Links
 Heroku:
-- https://swaroop-cc-tracker.herokuapp.com/users/new
+- https://swaroop-cc-tracker.herokuapp.com
 
 
 ## Technologies Used
