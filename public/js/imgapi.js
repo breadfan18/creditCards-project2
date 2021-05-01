@@ -11,7 +11,7 @@ function init() {
 }
 
 function getData() {
-    $.ajax(img_uri)
+    jQuery.ajax(img_uri)
         .then(function (data) {
             myImg = data;
             render();
