@@ -40,6 +40,9 @@
                 value="<%= card.bonusSpendDate.toLocaleDateString() %>"></input>
             <label><i class="bi bi-wallet2"></i>Annual Fee: </label>
             <input type="text" name="annualFee" readonly value="<%= card.annualFee %>"></input>
+            <label><i class="bi bi-calendar-date"></i>Next Fee Date: </label>
+            <input class="dateField" type="text" name="nextFeeDate" readonly
+                value="<%= card.nextFeeDate.toLocaleDateString() %>"></input>
             <label><i class="bi bi-eye"></i>Account Status: </label>
             <input name="accountStatusOld" id="accountStatus" type="text" readonly
                 value="<%= card.accountStatus %>"></input>

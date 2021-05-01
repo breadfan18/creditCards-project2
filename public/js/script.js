@@ -55,6 +55,8 @@ $('#editCardButton').on('click', function () {
         $('#accountStatus').css('display', 'none');
         $('#cardHolderChange').css('display', 'block');
         $('#applicantOld').css('display', 'none');
+        $('#cardDetails input').css('border', '1px solid black');
+        $('#cardDetails select').css('border', '1px solid black');
         readonly = !readonly;
     } else {
         $('input').prop('readonly', true);
@@ -63,6 +65,8 @@ $('#editCardButton').on('click', function () {
         $('#cardHolderChange').css('display', 'none');
         $('#applicantOld').css('display', 'block');
         $('#updateButton').prop('disabled', true);
+        $('#cardDetails input').css('border', 'none');
+        $('#cardDetails select').css('border', 'none');
         readonly = !readonly;
     }
     $(this).html(readonly ? 'Edit Card' : 'Cancel');
@@ -107,11 +111,22 @@ function toggleTheme() {
     } else {
         setTheme('theme-dark');
         $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable');
-        $('input[type="text"]').css('backgroundColor', 'white');
         $('#switch').html('Switch to Light Mode');
     }
 }
 
+// Immediately invoked function to set the theme on initial load
+(function () {
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
+        $('#switch').html('Switch to Light Mode');
+    } else {
+        setTheme('theme-light');
+        $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped')
+        $('#switch').html('Switch to Dark Mode');
+    }
+})();
 
 function toggleClosedAndDowngradedThemes(theme) {
     if (theme === 'dark') {
@@ -133,19 +148,4 @@ function toggleClosedAndDowngradedThemes(theme) {
         })
     }
 }
-
-
-// Immediately invoked function to set the theme on initial load
-(function () {
-    if (localStorage.getItem('theme') === 'theme-dark') {
-        setTheme('theme-dark');
-        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
-        $('input[type="text"]').css('backgroundColor', 'white');
-        $('#switch').html('Switch to Light Mode');
-    } else {
-        setTheme('theme-light');
-        $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped')
-        $('#switch').html('Switch to Dark Mode');
-    }
-})();
 

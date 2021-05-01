@@ -92,7 +92,10 @@ function update(req, res) {
         bonusSpend: req.body.bonusSpend,
         bonusSpendDate: req.body.bonusSpendDate,
         annualFee: req.body.annualFee,
-        accountStatus: req.body.accountStatus
+        accountStatus: req.body.accountStatus,
+        creditLine: req.body.creditLine,
+        nextFeeDate: req.body.nextFeeDate
+
     }
 
     Card.findByIdAndUpdate(req.params.id, cardObj, function (err, card) {

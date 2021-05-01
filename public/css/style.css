@@ -6,7 +6,7 @@
     --lighterColor: rgba(88,57,133, 0.5);
     --superlightColor: rgba(88,57,133, 0.3);
     --bodyColor: white;
-    --inputReadOnlyBorder: rgba(0, 0, 0, 0);
+    --inputReadOnlyBorder: white;
     --inputReadOnlyBkgrdColor: white;
 }
 
@@ -281,12 +281,15 @@ label {
     display: none;
 }
 
-input[type="text"][readonly] {
-    border: 2px solid var(--inputReadOnlyBorder);
+#cardDetails input, #cardDetails select {
+    border: 1px solid var(--inputReadOnlyBorder);
+    background-color: var(--inputReadOnlyBkgrdColor);
+    border-radius: 10px;
+    padding-left: 10px;
 }
 
-input[type="text"]{
-    background-color: var(--inputReadOnlyBkgrdColor);
+input[type="text"][readonly], select[readOnly] {
+    padding-left: 10px;
 }
 
 .table-responsive {
@@ -426,11 +429,12 @@ i {
 
 #cardsTable tr:hover {
     cursor: pointer;
-    /* background-color: var(--superlightColor); */
+    background-color: var(--superlightColor);
 }
 
 #creditPullDisplay {
-    margin-left: 5px;
+
+    margin-left: 13px;
 }
 
 .table-danger, .table-warning{
