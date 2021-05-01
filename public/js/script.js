@@ -126,24 +126,3 @@ function toggleTheme() {
 })();
 
 
-// Images API
-let img_uri = 'https://picsum.photos/1500/250';
-let imgArray = [];
-
-function getData() {
-    for (let i = 0; i < 20; i++) {
-        $.ajax(img_uri)
-            .then(function (img) {
-                imgArray.push(img);
-            },
-            function error(img) {
-                console.log(img);
-            })
-    }
-
-    setTimeout(() => {
-        console.log(imgArray);
-    }, 1000);
-}
-
-getData();
