@@ -80,8 +80,8 @@ $('#cardDetails').on('click', 'select', function () {
 })
 
 // listener that runs on page load, that will change closed, downgraded cards to a different color by adding class names. 
+let accountStatuses = $('.status');
 $(document).ready(function () {
-    let accountStatuses = $('.status');
     accountStatuses.each(function () {
         if ($(this).text() === 'Closed') {
             $(this).closest('tr').addClass('table-danger');
@@ -111,6 +111,30 @@ function toggleTheme() {
         $('#switch').html('Switch to Light Mode');
     }
 }
+
+
+function toggleClosedAndDowngradedThemes(theme) {
+    if (theme === 'dark') {
+        accountStatuses.each(function () {
+            if ($(this).text() === 'Closed') {
+                $(this).closest('tr').removeClass('table-danger').addClass('bg-danger');
+            } else if ($(this).text() === 'Downgraded') {
+                $(this).closest('tr').removeClass('table-warning').addClass('bg-warning');
+            }
+        })  
+
+    }else if (theme === 'light'){
+        accountStatuses.each(function () {
+            if ($(this).text() === 'Closed') {
+                $(this).closest('tr').addClass('table-danger').removeClass('bg-danger');
+            } else if ($(this).text() === 'Downgraded') {
+                $(this).closest('tr').addClass('table-warning').removeClass('bg-warning');
+            }
+        })
+    }
+}
+
+
 // Immediately invoked function to set the theme on initial load
 (function () {
     if (localStorage.getItem('theme') === 'theme-dark') {
@@ -124,5 +148,4 @@ function toggleTheme() {
         $('#switch').html('Switch to Dark Mode');
     }
 })();
-
 

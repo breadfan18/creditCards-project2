@@ -433,3 +433,6 @@ i {
     margin-left: 5px;
 }
 
+.table-danger, .table-warning{
+    color: black;
+}
