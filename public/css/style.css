@@ -163,6 +163,11 @@ footer>p {
     width: 20rem;
 }
 
+#userAndPwdForm i {
+    align-self: center;
+    justify-self: center;
+}
+
 .userAndPwdInput{
     border: none;
     border-radius: 5px;
