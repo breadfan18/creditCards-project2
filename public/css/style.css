@@ -419,3 +419,9 @@ i {
 .table-danger, .table-warning{
     color: black;
 }
+
+
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hamburger_icon_white.svg/32px-Hamburger_icon_white.svg.png');
+}
