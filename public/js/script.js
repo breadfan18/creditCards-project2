@@ -173,7 +173,7 @@ function autoSlideShow() {
     }
     images[autoIndex - 1].style.display = "block";
 
-    timeout = setTimeout(autoSlideShow, 3000);
+    timeout = setTimeout(autoSlideShow, 10000);
     currentSlide = autoIndex;
 
     slideshowPlaying = true;
