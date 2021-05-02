@@ -50,25 +50,34 @@ $(document).on('DOMContentLoaded', () => {
 
 // Script to toggle card Edit On and Off when Edit Card is clicked 
 let readonly = true;
+let input = $('input');
+let $accountStatusChange = $('#accountStatusChange');
+let $accountStatus = $('#accountStatus');
+let $cardHolderchange = $('#cardHolderChange');
+let $applicationOld =  $('#applicantOld');
+let $cardDetailsInputFields = $('#cardDetails input');
+let $cardDetailsUpdateFields = $('#cardDetails select');
+let $submitBtn = $('#updateButton');
+
 $('#editCardButton').on('click', function () {
     if ($(this).html() === 'Edit Card') {
-        $('input').prop('readonly', !readonly);
-        $('#accountStatusChange').css('display', 'block');
-        $('#accountStatus').css('display', 'none');
-        $('#cardHolderChange').css('display', 'block');
-        $('#applicantOld').css('display', 'none');
-        $('#cardDetails input').css('border', '1px solid black');
-        $('#cardDetails select').css('border', '1px solid black');
+        input.prop('readonly', !readonly);
+        $accountStatusChange.css('display', 'block');
+        $accountStatus.css('display', 'none');
+        $cardHolderchange.css('display', 'block');
+        $applicationOld.css('display', 'none');
+        $cardDetailsInputFields.css('border', '1px solid black');
+        $cardDetailsUpdateFields.css('border', '1px solid black');
         readonly = !readonly;
     } else {
-        $('input').prop('readonly', true);
-        $('#accountStatusChange').css('display', 'none');
-        $('#accountStatus').css('display', 'block');
-        $('#cardHolderChange').css('display', 'none');
-        $('#applicantOld').css('display', 'block');
-        $('#updateButton').prop('disabled', true);
-        $('#cardDetails input').css('border', 'none');
-        $('#cardDetails select').css('border', 'none');
+        input.prop('readonly', true);
+        $accountStatusChange.css('display', 'none');
+        $accountStatus.css('display', 'block');
+        $cardHolderchange.css('display', 'none');
+        $applicationOld.css('display', 'block');
+        $submitBtn.prop('disabled', true);
+        $cardDetailsInputFields.css('border', 'none');
+        $cardDetailsUpdateFields.css('border', 'none');
         readonly = !readonly;
     }
     $(this).html(readonly ? 'Edit Card' : 'Cancel');
