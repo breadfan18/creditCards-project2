@@ -50,18 +50,19 @@ $(document).on('DOMContentLoaded', () => {
 
 // Script to toggle card Edit On and Off when Edit Card is clicked 
 let readonly = true;
-let input = $('input');
+let $input = $('input');
 let $accountStatusChange = $('#accountStatusChange');
 let $accountStatus = $('#accountStatus');
 let $cardHolderchange = $('#cardHolderChange');
-let $applicationOld =  $('#applicantOld');
+let $applicationOld = $('#applicantOld');
 let $cardDetailsInputFields = $('#cardDetails input');
 let $cardDetailsUpdateFields = $('#cardDetails select');
 let $submitBtn = $('#updateButton');
+let $cardDetails = $('#cardDetails');
 
 $('#editCardButton').on('click', function () {
     if ($(this).html() === 'Edit Card') {
-        input.prop('readonly', !readonly);
+        $input.prop('readonly', !readonly);
         $accountStatusChange.css('display', 'block');
         $accountStatus.css('display', 'none');
         $cardHolderchange.css('display', 'block');
@@ -70,7 +71,7 @@ $('#editCardButton').on('click', function () {
         $cardDetailsUpdateFields.css('border', '1px solid black');
         readonly = !readonly;
     } else {
-        input.prop('readonly', true);
+        $input.prop('readonly', true);
         $accountStatusChange.css('display', 'none');
         $accountStatus.css('display', 'block');
         $cardHolderchange.css('display', 'none');
@@ -85,12 +86,12 @@ $('#editCardButton').on('click', function () {
 });
 
 // event listener to enable edit card submit button on keypress in input field
-$('#cardDetails').on('keypress', 'input', function () {
+$cardDetails.on('keypress', 'input', function () {
     $('#updateButton').prop('disabled', false);
 })
 
 // event listener to enable edit card submit button on click on a select field
-$('#cardDetails').on('click', 'select', function () {
+$cardDetails.on('click', 'select', function () {
     $('#updateButton').prop('disabled', false);
 })
 
@@ -113,16 +114,21 @@ function setTheme(themeName) {
     localStorage.setItem('theme', themeName);
     document.documentElement.className = themeName;
 }
+
+// variables to switch themes
+let $tables = $('table');
+let $switchButton = $('#switch');
+
 // function to toggle between light and dark theme
 function toggleTheme() {
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-light');
-        $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped');
-        $('#switch').html('Switch to Dark Mode');
+        $tables.removeClass('table-dark').addClass('table-hover').addClass('table-striped');
+        $switchButton.html('Switch to Dark Mode');
     } else {
         setTheme('theme-dark');
-        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable');
-        $('#switch').html('Switch to Light Mode');
+        $tables.addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable');
+        $switchButton.html('Switch to Light Mode');
     }
 }
 
@@ -130,12 +136,12 @@ function toggleTheme() {
 (function () {
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-dark');
-        $('table').addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
-        $('#switch').html('Switch to Light Mode');
+        $tables.addClass('table-dark').removeClass('table-hover').removeClass('table-striped').removeClass('dataTable')
+        $switchButton.html('Switch to Light Mode');
     } else {
         setTheme('theme-light');
-        $('table').removeClass('table-dark').addClass('table-hover').addClass('table-striped')
-        $('#switch').html('Switch to Dark Mode');
+        $tables.removeClass('table-dark').addClass('table-hover').addClass('table-striped')
+        $switchButton.html('Switch to Dark Mode');
     }
 })();
 
@@ -196,26 +202,26 @@ function autoSlideShow() {
 // CODE TO MAKE THE USER NAVBAR STICKY 
 
 // listener to execute sticky code on scroll
-$(document).ready(function() {
+$(document).ready(function () {
     // grab the initial top offset of the navigation 
-       let stickyNavTop = $('#userNav').offset().top;
-       
-       // our function that decides weather the navigation bar should have "fixed" css position or not.
-       let stickyNav = function(){
+    let stickyNavTop = $('#userNav').offset().top;
+
+    // our function that decides weather the navigation bar should have "fixed" css position or not.
+    let stickyNav = function () {
         let scrollTop = $(window).scrollTop(); // our current vertical position from the top
-             
+
         // if we've scrolled more than the navigation, change its position to fixed to stick to top,
         // otherwise change it back to relative
-        if (scrollTop > stickyNavTop) { 
+        if (scrollTop > stickyNavTop) {
             $('#userNav').addClass('sticky');
         } else {
-            $('#userNav').removeClass('sticky'); 
+            $('#userNav').removeClass('sticky');
         }
     };
 
     stickyNav();
     // and run it again every time you scroll
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         stickyNav();
     });
 });
