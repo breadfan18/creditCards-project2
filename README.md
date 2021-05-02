@@ -60,6 +60,32 @@ These were the wireframes I created before starting to write any code for this p
 ![loginForm](https://i.imgur.com/EbhTlcj.png)
 
 ### Cards Index Page
-![loginForm](https://i.imgur.com/EbhTlcj.png)
+![cardIndexPage](https://i.imgur.com/QNlq8V4.png)
 
+### Add Users Page
+![Add Users](https://i.imgur.com/k26R7aD.jpg)
+
+### Add Card Page
+![Add Card](https://i.imgur.com/BjYzUD0.png)
+
+### Card Details Show Page
+![card show](https://i.imgur.com/qcfe3OT.png)
+
+
+## App Screenshots - DARK MODE
+
+### Login Form
+![loginForm](https://i.imgur.com/x4Iw8Ri.png)
+
+### Cards Index Page
+![cardIndexPage](https://i.imgur.com/3O4eWjh.png)
+
+### Add Users Page
+![Add Users](https://i.imgur.com/c2woQe2.png)
+
+### Add Card Page
+![Add Card](https://i.imgur.com/vWdJCor.png)
+
+### Card Details Show Page
+![card show](https://i.imgur.com/3soZ8Zi.png)
 

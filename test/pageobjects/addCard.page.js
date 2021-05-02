@@ -31,7 +31,7 @@ class AddCardPage extends Page {
         return $('#identifierNext')
     }
     get googlePwdField() {
-        return $('input[type="password"]')
+        return $("#password")
     }
     get googlePwdNextButton() {
         return $('#passwordNext')
@@ -39,8 +39,6 @@ class AddCardPage extends Page {
     get addCardNavLink() {
         return $('#addCardNavLink')
     }
-
-
     get cardHolder() {
         return $('#cardHolder')
     }
@@ -92,9 +90,11 @@ class AddCardPage extends Page {
      */
     async addNewCard() {
         await (await this.googleSignInButton).click();
-        await (await this.googleEmailInput).setValue('martialdex');
+        browser.pause(10000);
+        await (await this.googleEmailInput).setValue('breadfan18');
+     
         await (await this.googleNextButton).click();
-        await (await this.googlePwdField).setValue('dexter2015');
+        await (await this.googlePwdField).setValue('TheRedGod35');
         await (await this.googlePwdNextButton).click();
         await (await this.addCardNavLink).click();
         
