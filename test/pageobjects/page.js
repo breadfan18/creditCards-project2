@@ -8,6 +8,6 @@ module.exports = class Page {
     * @param path path of the sub page (e.g. /path/to/page.html)
     */
     open () {
-        return browser.url(`https://swaroop-cc-tracker.herokuapp.com/cards/new`)
+        return browser.url(`https://swaroop-cc-tracker.herokuapp.com/`)
     }
 }

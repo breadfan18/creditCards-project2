@@ -196,7 +196,7 @@ footer>p {
 
 .headerImg {
     width: 100%;
-    min-height: 80%;
+    min-height: 100%;
     object-fit: stretch;
 }
 
@@ -419,4 +419,3 @@ i {
 .table-danger, .table-warning{
     color: black;
 }
-
