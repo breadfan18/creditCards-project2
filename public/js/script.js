@@ -2,32 +2,34 @@
 
 // First call the function for cityState.js in the helpers folder that returns the city/stage object
 const statesAndCities = getCityStates();
+const $states = $('#states');
+const $cities = $('#cities');
 
 // Get all the states, which are keys, and store them in allStates array. Then append each statename into the select drop down for states.
 let allStates = Object.keys(statesAndCities).sort();
-$('#states').append('<option></option>');
+$states.append('<option></option>');
 allStates.forEach(element => {
     let $newStateRow = $(`
         <option value="${element}">${element}</option>
     `)
-    $('#states').append($newStateRow);
+    $states.append($newStateRow);
 });
 
 // Populate cities when a certain state is selected. 
 function initializeCities() {
     selectedState = $('#states option:selected').val();
     cities = statesAndCities[selectedState].sort();
-    $('#cities').empty();
-    $('#cities').append('<option></option>');
+    $cities.empty();
+    $cities.append('<option></option>');
     cities.forEach(city => {
         let $newCityRow = $(`
         <option value="${city}">${city}</option>
     `)
-        $('#cities').append($newCityRow);
+        $cities.append($newCityRow);
     })
 }
 
-$('#states').on('change', initializeCities);
+$states.on('change', initializeCities);
 
 // Initilize DataTables CDN 
 $(document).ready(function () {
@@ -182,14 +184,29 @@ function autoSlideShow() {
 }
 
 
-// CODE TO MAKE THE NAVBAR STICKY 
+// CODE TO MAKE THE USER NAVBAR STICKY 
 
 // listener to execute sticky code on scroll
+$(document).ready(function() {
+    // grab the initial top offset of the navigation 
+       let stickyNavTop = $('#userNav').offset().top;
+       
+       // our function that decides weather the navigation bar should have "fixed" css position or not.
+       let stickyNav = function(){
+        let scrollTop = $(window).scrollTop(); // our current vertical position from the top
+             
+        // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+        // otherwise change it back to relative
+        if (scrollTop > stickyNavTop) { 
+            $('#userNav').addClass('sticky');
+        } else {
+            $('#userNav').removeClass('sticky'); 
+        }
+    };
 
-$(window).on('scroll', stickyCarousel());
-
-let $navBar = $('#carousel');
-
-function stickyCarousel() {
-    
-}
+    stickyNav();
+    // and run it again every time you scroll
+    $(window).scroll(function() {
+        stickyNav();
+    });
+});
