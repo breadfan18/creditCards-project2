@@ -151,6 +151,8 @@ function toggleClosedAndDowngradedThemes(theme) {
 
 
 
+
+// CODE FOR THE HEADER IMAGE CAROUSEL SLIDESHOW
 let images = $('.headerImg');
 let autoIndex = 0;
 let slideshowPlaying = false;
@@ -177,5 +179,17 @@ function autoSlideShow() {
     currentSlide = autoIndex;
 
     slideshowPlaying = true;
+}
 
+
+// CODE TO MAKE THE NAVBAR STICKY 
+
+// listener to execute sticky code on scroll
+
+$(window).on('scroll', stickyCarousel());
+
+let $navBar = $('#carousel');
+
+function stickyCarousel() {
+    
 }
