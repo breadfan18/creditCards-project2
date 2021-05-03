@@ -89,14 +89,14 @@ class AddCardPage extends Page {
      * e.g. to login using username and password
      */
     async addNewCard() {
-        await (await this.googleSignInButton).click();
-        browser.pause(10000);
-        await (await this.googleEmailInput).setValue('breadfan18');
+        // await (await this.googleSignInButton).click();
+        // browser.pause(10000);
+        // await (await this.googleEmailInput).setValue('breadfan18');
      
-        await (await this.googleNextButton).click();
-        await (await this.googlePwdField).setValue('TheRedGod35');
-        await (await this.googlePwdNextButton).click();
-        await (await this.addCardNavLink).click();
+        // await (await this.googleNextButton).click();
+        // await (await this.googlePwdField).setValue('TheRedGod35');
+        // await (await this.googlePwdNextButton).click();
+        // await (await this.addCardNavLink).click();
         
         
         await (await this.cardHolder).click();
