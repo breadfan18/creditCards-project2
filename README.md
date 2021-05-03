@@ -12,6 +12,7 @@ I manage credit card applications and details for a bunch of my family members. 
 - Click Card Row to view Card Details 
 - Add/Delete Notes to cards in the Card View
 - Update card Details 
+- Dark Mode implementation
 
 ## Live Links
 **Heroku:**
