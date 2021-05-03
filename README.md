@@ -103,7 +103,16 @@ These were the wireframes I created before starting to write any code for this p
 ### Card Details Show Page
 ![card show](https://i.imgur.com/3soZ8Zi.png)
 
+## Challenges
 
+### Create Card Adding Data was Cumbersome
+**Problem**
+- My create card form was quite a long one, so wheneve i needed to create a card, it took a bunch of my manual time in order to create a card. I need to automate this process
+
+**Solution**
+- Imported an npm package called `webdriverIO` which is a testing framework. But can also be used to automate the web ui. 
+- Wrote a `wdio script` for the addCard flow to quickly create card data whenever i needed it. 
+- Also imported an npm package called `chance` that is super useful for creating random data. So i used the chance package to create a random credit card name, numbers and dates so I wouldn't have to submit any information for the `createCard script`
 
 
 ## Future Enhancements
