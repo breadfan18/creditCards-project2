@@ -3,6 +3,12 @@
 ## Swaroop's Credit Card Tracker
 I manage credit card applications and details for a bunch of my family members. I had an excel spreadsheet that i use to manage this data. I constantly use it to great effect. So when there came time to think about Project 2 idea, i immediately gravitated to this. So i can create the app, use authentication for other family members to use the app themselves. I can share this to others to manage credit card information and events for their own family members. 
 
+## Getting Started
+**Heroku Link:**
+- https://swaroop-cc-tracker.herokuapp.com
+
+To start using the app, simply navigate to the heroku link, login with your gmail account. Then you can manage your and your family's credit cards, and build good credit habits, build an excellent score, and enjoy all the amazing credit card rewards like cash back and travel perks. 
+
 ## App Features
 - Register Users / Delete Users 
 - Add Cards for Registered Users
@@ -13,11 +19,6 @@ I manage credit card applications and details for a bunch of my family members. 
 - Add/Delete Notes to cards in the Card View
 - Update card Details 
 - Dark Mode implementation
-
-## Live Links
-**Heroku:**
-- https://swaroop-cc-tracker.herokuapp.com
-
 
 ## Technologies Used
 - HTML5
