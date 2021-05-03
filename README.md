@@ -107,7 +107,7 @@ These were the wireframes I created before starting to write any code for this p
 
 ### Create Card Adding Data was Cumbersome
 **Problem**
-- My create card form was quite a long one, so wheneve i needed to create a card, it took a bunch of my manual time in order to create a card. I need to automate this process
+- My create card form was quite a long one, so whenever i needed to create a card, it took quite a bit of my time in order to create a card. I need to automate this process.
 
 **Solution**
 - Imported an npm package called `webdriverIO` which is a testing framework. But can also be used to automate the web ui. 
