@@ -1,5 +1,17 @@
 # GA Project 2 - Credit Card Applications Tracker
 
+## Swaroop's Credit Card Tracker
+I manage credit card applications and details for a bunch of my family members. I had an excel spreadsheet that i use to manage this data. I constantly use it to great effect. So when there came time to thing about Project 2 idea, i immediately gravitates to this. So i can create the app, use authentication for other family members to use the app themselves. I can share this to others to manage credit card information and events for their own family members. 
+
+## App Features
+- Register Users / Delete Users 
+- Add Cards for Registered Users
+- Display Credit Card information in a sortable, searchable table format
+- User tabs in the index page, for viewing cards for specific users
+- Highlighting for Closed and Downgraded Cards
+- Click Card Row to view Card Details 
+- Add/Delete Notes to cards in the Card View
+- Update card Details 
 
 ## Live Links
 **Heroku:**
