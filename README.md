@@ -18,7 +18,7 @@ To start using the app, simply navigate to the heroku link, login with your gmai
 - Click Card Row to view Card Details 
 - Add/Delete Notes to cards in the Card View
 - Update card Details 
-- Dark Mode implementation
+- Dark Mode Implementation
 
 ## Technologies Used
 - HTML5
