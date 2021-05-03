@@ -200,28 +200,17 @@ function autoSlideShow() {
 
 
 // CODE TO MAKE THE USER NAVBAR STICKY 
+let $navToStick = $('#userNav');
 
-// listener to execute sticky code on scroll
-$(document).ready(function () {
-    // grab the initial top offset of the navigation 
-    let stickyNavTop = $('#userNav').offset().top;
+    let $navPositionFromTop = $navToStick.offset().top;
 
-    // our function that decides weather the navigation bar should have "fixed" css position or not.
-    let stickyNav = function () {
-        let scrollTop = $(window).scrollTop(); // our current vertical position from the top
-
-        // if we've scrolled more than the navigation, change its position to fixed to stick to top,
-        // otherwise change it back to relative
-        if (scrollTop > stickyNavTop) {
-            $('#userNav').addClass('sticky');
+    function stickyNav() {
+        let $currentVerticalScrollPosition = $(window).scrollTop();
+        if ($currentVerticalScrollPosition > $navPositionFromTop) {
+            $navToStick.addClass('sticky');
         } else {
-            $('#userNav').removeClass('sticky');
+            $navToStick.removeClass('sticky');
         }
     };
-
-    stickyNav();
-    // and run it again every time you scroll
-    $(window).scroll(function () {
-        stickyNav();
-    });
-});
+// listener on window on scroll envents.
+$(window).on('scroll', stickyNav);
