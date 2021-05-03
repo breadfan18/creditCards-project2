@@ -8,7 +8,7 @@
             <p>Please submit all required information</p>
         </div>
         <form action="/cards" method="POST" id="addCardForm">
-            <label for="cardHolder">Card Holder</label>
+            <label for="cardHolder"><i class="bi bi-file-person"></i>Card Holder</label>
             <select class="form-control" id="cardHolder" name="applicant">
                 <option value="" disabled selected>Choose Cardholder</option>
                 <% users.forEach(user => { %>
@@ -18,7 +18,7 @@
                 <% }); %>
                 
             </select>
-            <label for="issuer">Card Issuer</label>
+            <label for="issuer"><i class="bi bi-credit-card"></i>Card Issuer</label>
             <select class="form-control" id="issuer" name="issuer">
                 <option value="" disabled selected>Choose Issuer</option>
                 <option>Chase</option>
@@ -31,11 +31,11 @@
                 <option>US Bank</option>
                 <option>PNC</option>
             </select>
-            <label for="cardName">Card Name</label>
+            <label for="cardName"><i class="bi bi-credit-card-2-front"></i>Card Name</label>
             <input type="text" class="form-control" id="cardName" name="cardName">
-            <label for="appDate">App Date</label>
+            <label for="appDate"><i class="bi bi-calendar-date"></i>App Date</label>
             <input type="date" class="form-control" id="appDate" name="appDate">
-            <label for="creditPull">Credit Pull</label>
+            <label for="creditPull"><i class="bi bi-shield-lock"></i>Credit Pull</label>
             <div id="creditPull">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="experian" name="experian">
@@ -56,15 +56,15 @@
                     </label>
                 </div>
             </div>
-            <label for="nextFeeDate">Next Fee Date</label>
+            <label for="nextFeeDate"><i class="bi bi-calendar-date"></i>Next Fee Date</label>
             <input type="date" class="form-control" id="nextFeeDate" name="nextFeeDate">
-            <label for="creditLine">Credit Line</label>
+            <label for="creditLine"><i class="bi bi-cash-stack"></i>Credit Line</label>
             <input type="text" class="form-control" id="creditLine" name="creditLine">
-            <label for="bonusSpend">Bonus Spend</label>
+            <label for="bonusSpend"><i class="bi bi-cash"></i>Bonus Spend</label>
             <input type="text" class="form-control" id="bonusSpend" name="bonusSpend">
-            <label for="bonusSpendDate">Bonus Spend Date</label>
+            <label for="bonusSpendDate"><i class="bi bi-calendar-date"></i>Bonus Spend Date</label>
             <input type="date" class="form-control" id="bonusSpendDate" name="bonusSpendDate">
-            <label for="annualFee">Annual Fee</label>
+            <label for="annualFee"><i class="bi bi-wallet2"></i>Annual Fee</label>
             <input type="text" class="form-control" id="annualFee" name="annualFee">
             <button id="newCardSubmitBtn" type="submit" class="btn btn-primary">Add Card</button>
         </form>
