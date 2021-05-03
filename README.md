@@ -101,3 +101,17 @@ These were the wireframes I created before starting to write any code for this p
 ### Card Details Show Page
 ![card show](https://i.imgur.com/3soZ8Zi.png)
 
+
+
+
+## Future Enhancements
+
+### Implement Authorization
+- Future vision for this app is for the autheticated user to be the Family Admin. Each Family Admin can have their set of users (family members) they can manage. 
+
+### Card Benefits 
+- Incluse additinal module to view benefits for each card
+
+## Bugs
+- Card View - Only first page , on click opend edit card page. Second, third page onwards don't click :/
+- Editing user information in the edit card flow, actually just changes the name of the user in the user document. Instead of attaching the user ._id to the card applicant field
