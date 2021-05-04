@@ -207,13 +207,15 @@ footer>p {
     margin-bottom: 10px;
 }
 
-.login-form-group > i {
-    padding-right: 5px;
-    background-color: red;
+.loginLabels {
+    padding-right: 10px;
+    border-right: 1px solid var(--superlightColor);
 }
 
-#showPwd {
-    margin-right: 0;
+#togglePwd {
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 

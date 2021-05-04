@@ -1,3 +1,19 @@
+// CODE TO TOGGLE PASSWORD SHOW/HIDE
+let $pwdToggle = $('#togglePwd');
+$pwdToggle.on('click', togglePwdDisplay);
+let $pwdField = $('#pwdField');
+
+function togglePwdDisplay() {
+    if($pwdField.prop('type') === 'password'){
+        $pwdField.prop('type', 'text');
+        $(this).removeClass('bi-eye').addClass('bi-eye-slash');
+    }else {
+        $pwdField.prop('type', 'password');
+        $(this).removeClass('bi-eye-slash').addClass('bi-eye');
+    }
+}
+
+
 // Initialize city and state functionality in the add user page
 
 // First call the function for cityState.js in the helpers folder that returns the city/stage object
@@ -214,3 +230,5 @@ let $navToStick = $('#userNav');
     };
 // listener on window on scroll envents.
 $(window).on('scroll', stickyNav);
+
+
