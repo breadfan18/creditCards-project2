@@ -1,7 +1,6 @@
 const Page = require('./page');
 const Chance = require('chance');
 const chance = new Chance();
-let my_random_string = chance.string();
 /**
  * sub page containing specific selectors and methods for a specific page
  */
