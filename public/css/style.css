@@ -30,6 +30,13 @@ body {
     background-color: var(--bodyColor);
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -156,11 +163,15 @@ footer>p {
 }
 
 #userAndPwdForm {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 10fr;
     grid-template-rows: auto auto;
     grid-gap: 0.5em;
-    width: 20rem;
+    width: 20rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #userAndPwdForm i {
@@ -184,6 +195,27 @@ footer>p {
     margin-top: 15px;
     padding: 10px;
 }
+
+
+.login-form-group {
+    display: flex;
+    border: 1px solid var(--lighterColor);
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 5px;
+    width: 20rem;
+    margin-bottom: 10px;
+}
+
+.login-form-group > i {
+    padding-right: 5px;
+    background-color: red;
+}
+
+#showPwd {
+    margin-right: 0;
+}
+
 
 
 /* HEADER IMAGE AND CAROUSEL */
@@ -236,7 +268,6 @@ label {
     top: 0;
     z-index: 100;
     border-top: 0;
-  
 }
 
 

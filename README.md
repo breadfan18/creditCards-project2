@@ -160,6 +160,10 @@ function create(req, res) {
 ### Card Benefits 
 - Incluse additinal module to view benefits for each card
 
+### Login Strategies
+- Implement Login Strategies for LinkedIn and Facebook as well
+- Implement separate login functionality managed by the app itself. 
+
 ## Bugs
 - Card View - Only first page , on click opend edit card page. Second, third page onwards don't click :/
 - Editing user information in the edit card flow, actually just changes the name of the user in the user document. Instead of attaching the user ._id to the card applicant field

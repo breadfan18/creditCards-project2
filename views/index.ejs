@@ -20,10 +20,15 @@
         </div>
         <h2 id="loginOr">OR</h2>
         <form action="" id="userAndPwdForm">
-            <i class="bi bi-person-circle loginLabels"></i>
-            <input class="userAndPwdInput" type="text" placeholder="Username">
-            <i class="bi bi-bullseye loginLabels"></i>
-            <input class="userAndPwdInput" type="text" placeholder="Password">
+            <div class="login-form-group"> 
+                <i class="bi bi-person-circle loginLabels"></i>
+                <input class="userAndPwdInput" type="text" placeholder="Username">
+            </div>
+            <div class="login-form-group">
+                 <i class="bi bi-shield-lock-fill loginLabels"></i>
+                <input class="userAndPwdInput" type="password" placeholder="Password">
+                <i id="showPwd" class="bi bi-eye"></i>
+            </div>
         </form>
         <button id="loginSubmit" class="btn btn-success">Log In</button>
     </section>
