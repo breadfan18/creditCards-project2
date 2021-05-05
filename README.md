@@ -9,17 +9,6 @@ Simple application to manage credit card data for various users. You can manage 
 
 To start using the app, simply navigate to the heroku link, login with your gmail account. 
 
-## App Features
-- Register Users / Delete Users 
-- Add Cards for Registered Users
-- Display Credit Card information in a sortable, searchable table format
-- User tabs in the index page, for viewing cards for specific users
-- Highlighting for Closed and Downgraded Cards
-- Click Card Row to view Card Details 
-- Add/Delete Notes to cards in the Card View
-- Update card Details 
-- Dark Mode Implementation
-
 ## Technologies Used
 - HTML5
 - CSS3
@@ -67,6 +56,17 @@ These were the wireframes I created before starting to write any code for this p
 - The Cards collection with have a Referenced Relationship with the Users model
 
 ![erd](https://i.imgur.com/GR1ENea.png)
+
+## App Features
+- Register Users / Delete Users 
+- Add Cards for Registered Users
+- Display Credit Card information in a sortable, searchable table format
+- User tabs in the index page, for viewing cards for specific users
+- Highlighting for Closed and Downgraded Cards
+- Click Card Row to view Card Details 
+- Add/Delete Notes to cards in the Card View
+- Update card Details 
+- Dark Mode Implementation
 
 ## App Screenshots
 
