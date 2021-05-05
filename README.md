@@ -1,7 +1,7 @@
 # GA Project 2 - Credit Card Applications Tracker
 
 ## Swaroop's Credit Card Tracker
-Simple application to manage credit card data for vairous users. You can manage yours and your family's credit cards, and build good credit habits, build an excellent score, and enjoy all the amazing credit card rewards like cash back and travel perks. 
+Simple application to manage credit card data for various users. You can manage yours and your family's credit cards, and build good credit habits, build an excellent score, and enjoy all the amazing credit card rewards like cash back and travel perks. 
 
 ## Getting Started
 **Heroku Link:**
@@ -155,7 +155,7 @@ function create(req, res) {
 ## Future Enhancements
 
 ### Implement Authorization
-- Future vision for this app is for the autheticated user to be the Family Admin. Each Family Admin can have their set of users (family members) they can manage. 
+- Future vision for this app is for the autheticated user to be the Family Admin. Each Family Admin can have their set of users (family members), and their set of credit cards that they can manage. 
 
 ### Card Benefits 
 - Incluse additinal module to view benefits for each card
