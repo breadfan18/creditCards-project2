@@ -167,3 +167,9 @@ function create(req, res) {
 ## Bugs
 - Card View - Only first page , on click opend edit card page. Second, third page onwards don't click :/
 - Editing user information in the edit card flow, actually just changes the name of the user in the user document. Instead of attaching the user ._id to the card applicant field
+
+## Key Takeaways
+- I love doing this. 
+- REALLY think through models BEFORE starting to implement code
+- Implement OAUTH before writing the bulk of your code. 
+
