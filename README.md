@@ -1,13 +1,13 @@
 # GA Project 2 - Credit Card Applications Tracker
 
 ## Swaroop's Credit Card Tracker
-I manage credit card applications and details for a bunch of my family members. I had an excel spreadsheet that i use to manage this data. I constantly use it to great effect. So when there came time to think about Project 2 idea, i immediately gravitated to this. So i can create the app, use authentication for other family members to use the app themselves. I can share this to others to manage credit card information and events for their own family members. 
+Simple application to manage credit card data for vairous users. You can manage yours and your family's credit cards, and build good credit habits, build an excellent score, and enjoy all the amazing credit card rewards like cash back and travel perks. 
 
 ## Getting Started
 **Heroku Link:**
 - https://swaroop-cc-tracker.herokuapp.com
 
-To start using the app, simply navigate to the heroku link, login with your gmail account. Then you can manage your and your family's credit cards, and build good credit habits, build an excellent score, and enjoy all the amazing credit card rewards like cash back and travel perks. 
+To start using the app, simply navigate to the heroku link, login with your gmail account. 
 
 ## App Features
 - Register Users / Delete Users 
@@ -29,11 +29,11 @@ To start using the app, simply navigate to the heroku link, login with your gmai
 - Javascript
 - jQuery
 - jQuery DataTables
-- AJAX
 - MongoDB
 - Node.JS
 - Express.JS
 - Passport.JS
+- OAUTH (Google Login)
 - LocalStorage
 
 
