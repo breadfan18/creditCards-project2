@@ -13,7 +13,6 @@ function togglePwdDisplay() {
     }
 }
 
-
 // Initialize city and state functionality in the add user page
 
 // First call the function for cityState.js in the helpers folder that returns the city/stage object
@@ -181,7 +180,6 @@ function toggleClosedAndDowngradedThemes(theme) {
         })
     }
 }
-
 
 
 
