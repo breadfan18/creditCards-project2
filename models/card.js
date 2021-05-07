@@ -30,6 +30,10 @@ const cardsSchema = new Schema({
             return new Date();
         }
     },
+    cardType: {
+        type: String,
+        enum: ['Personal', 'Business'],
+    },
     issuer: String,
     cardName: String,
     creditPull: [],
