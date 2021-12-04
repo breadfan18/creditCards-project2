@@ -6,7 +6,7 @@ module.exports = {
     new: newCard,
     create,
     show,
-    delete: deleteCard, 
+    delete: deleteCard,
     update
 }
 
@@ -16,7 +16,7 @@ function index(req, res) {
             // if (err) return res.redirect('/');
             res.render('cards/index', {
                 title: 'All Cards',
-                cards, 
+                cards,
                 users,
                 admin: req.user
             })
@@ -51,8 +51,8 @@ function create(req, res) {
             bonusSpendDate: req.body.bonusSpendDate,
             annualFee: req.body.annualFee
         }
-        Card.create(newCardObj, function(err, card){
-            if(err) return res.redirect('/cards/new');
+        Card.create(newCardObj, function (err, card) {
+            if (err) return res.redirect('/cards/new');
             res.redirect('/cards');
         })
     })
@@ -69,11 +69,11 @@ function show(req, res) {
             })
         })
     })
-    
+
 }
 
 function deleteCard(req, res) {
-    Card.findByIdAndDelete(req.params.id, function(err, card) {
+    Card.findByIdAndDelete(req.params.id, function (err, card) {
         res.redirect('/cards');
     })
 }
@@ -104,10 +104,10 @@ function update(req, res) {
     })
 }
 
-function splitFullName(fullName){
+function splitFullName(fullName) {
     let nameSplitArr = fullName.split(' ');
     return {
         firstName: nameSplitArr[0],
-        lastName: nameSplitArr[1]   
+        lastName: nameSplitArr[1]
     }
 }
